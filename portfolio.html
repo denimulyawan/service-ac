@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Service AC - AC Deni Service</title>
+    <meta name="description" content="Galeri before-after pekerjaan service AC dari AC Deni Service. Lihat hasil kerja profesional kami di Bogor Selatan.">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<nav class="navbar">
+    <div class="nav-container">
+        <a href="index.html" class="logo">AC DENI <span>SERVICE</span></a>
+        <div class="menu-toggle" id="menuToggle">
+            <i class="fas fa-bars"></i>
+        </div>
+        <ul class="nav-menu" id="navMenu">
+            <li><a href="index.html">🏠 Beranda</a></li>
+            <li><a href="layanan.html">🔧 Layanan</a></li>
+            <li><a href="portfolio.html" class="active">📸 Portfolio</a></li>
+            <li><a href="tentang.html">👤 Tentang Kami</a></li>
+            <li><a href="testimoni.html">⭐ Testimoni</a></li>
+            <li><a href="faq.html">❓ FAQ</a></li>
+            <li><a href="kontak.html">📞 Kontak</a></li>
+        </ul>
+    </div>
+</nav>
+
+<section class="section">
+    <div class="container">
+        <h2 class="section-title">📸 Portfolio Pekerjaan</h2>
+        <p class="section-subtitle">Before - After service AC oleh teknisi profesional kami</p>
+        
+        <div class="portfolio-grid" id="portfolioGrid">
+            <!-- Placeholder portfolio -->
+            <div class="portfolio-item" onclick="openLightbox('assets/placeholder1.jpg')">
+                <img src="https://placehold.co/600x400/e2e8f0/64748B?text=Before+Service" alt="Before Service AC">
+                <div class="portfolio-overlay">
+                    <p>Cuci AC - Cipaku</p>
+                </div>
+            </div>
+            <div class="portfolio-item" onclick="openLightbox('assets/placeholder2.jpg')">
+                <img src="https://placehold.co/600x400/3B82F6/white?text=After+Service" alt="After Service AC">
+                <div class="portfolio-overlay">
+                    <p>Hasil Cuci AC - Cipaku</p>
+                </div>
+            </div>
+            <div class="portfolio-item" onclick="openLightbox('assets/placeholder3.jpg')">
+                <img src="https://placehold.co/600x400/e2e8f0/64748B?text=Before+Service" alt="Before Service AC">
+                <div class="portfolio-overlay">
+                    <p>Isi Freon - Batutulis</p>
+                </div>
+            </div>
+            <div class="portfolio-item" onclick="openLightbox('assets/placeholder4.jpg')">
+                <img src="https://placehold.co/600x400/3B82F6/white?text=After+Service" alt="After Service AC">
+                <div class="portfolio-overlay">
+                    <p>Hasil Isi Freon - Batutulis</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="text-center mt-20">
+            <p style="color: var(--gray);">📸 Foto real akan segera diupdate setelah pekerjaan terbaru</p>
+        </div>
+    </div>
+</section>
+
+<!-- Modal Lightbox -->
+<div id="lightboxModal" class="modal">
+    <span class="modal-close">&times;</span>
+    <img id="lightboxImg" src="">
+</div>
+
+<footer class="footer">
+    <div class="container">
+        <p>📱 Ikuti kami: 
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-tiktok"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+        </p>
+        <p>© 2026 AC Deni Service - Service AC Profesional Bogor Selatan</p>
+    </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>

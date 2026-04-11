@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kontak & Booking Service AC - AC Deni Service</title>
+    <meta name="description" content="Booking service AC di Bogor Selatan. Isi form online atau hubungi WhatsApp kami untuk respon cepat.">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<nav class="navbar">
+    <div class="nav-container">
+        <a href="index.html" class="logo">AC DENI <span>SERVICE</span></a>
+        <div class="menu-toggle" id="menuToggle">
+            <i class="fas fa-bars"></i>
+        </div>
+        <ul class="nav-menu" id="navMenu">
+            <li><a href="index.html">🏠 Beranda</a></li>
+            <li><a href="layanan.html">🔧 Layanan</a></li>
+            <li><a href="portfolio.html">📸 Portfolio</a></li>
+            <li><a href="tentang.html">👤 Tentang Kami</a></li>
+            <li><a href="testimoni.html">⭐ Testimoni</a></li>
+            <li><a href="faq.html">❓ FAQ</a></li>
+            <li><a href="kontak.html" class="active">📞 Kontak</a></li>
+        </ul>
+    </div>
+</nav>
+
+<section class="section">
+    <div class="container">
+        <h2 class="section-title">📞 Booking Service AC</h2>
+        
+        <div class="grid-3" style="margin-bottom: 40px;">
+            <div class="card text-center">
+                <i class="fab fa-whatsapp" style="font-size: 2.5rem; color: #25D366;"></i>
+                <h3>WhatsApp</h3>
+                <p>0812-3456-7890</p>
+                <a href="https://wa.me/6281234567890" class="btn btn-wa" style="margin-top: 10px;">Chat Sekarang</a>
+            </div>
+            <div class="card text-center">
+                <i class="fas fa-phone-alt" style="font-size: 2.5rem; color: var(--secondary);"></i>
+                <h3>Telepon</h3>
+                <p>(0251) 1234 5678</p>
+            </div>
+            <div class="card text-center">
+                <i class="fas fa-envelope" style="font-size: 2.5rem; color: var(--secondary);"></i>
+                <h3>Email</h3>
+                <p>acdeni.service@gmail.com</p>
+            </div>
+        </div>
+        
+        <div class="card">
+            <h3 style="margin-bottom: 20px;">📝 Form Booking Online</h3>
+            <form id="bookingForm">
+                <div class="form-group">
+                    <label>Nama lengkap *</label>
+                    <input type="text" id="nama" required>
+                </div>
+                <div class="form-group">
+                    <label>No. WhatsApp *</label>
+                    <input type="number" id="wa" required>
+                </div>
+                <div class="form-group">
+                    <label>Alamat (pilih kelurahan) *</label>
+                    <select id="kelurahan" required>
+                        <option value="">Pilih kelurahan</option>
+                        <option>Batutulis</option><option>Bojongkerta</option><option>Bondongan</option>
+                        <option>Cikaret</option><option>Cipaku</option><option>Empang</option>
+                        <option>Genteng</option><option>Harjasari</option><option>Kertamaya</option>
+                        <option>Lawanggintung</option><option>Muarasari</option><option>Mulyaharja</option>
+                        <option>Pakuan</option><option>Pamoyanan</option><option>Rancamaya</option>
+                        <option>Ranggamekar</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Detail alamat (jalan, nomor, RT/RW) *</label>
+                    <textarea id="detailAlamat" rows="2" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label>Jenis AC *</label>
+                    <select id="jenisAC" required>
+                        <option>1/2 PK</option><option>1 PK</option><option>1.5 PK</option><option>2 PK</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Jenis layanan / keluhan (bisa pilih lebih dari 1) *</label>
+                    <div class="services-chips" id="servicesChips">
+                        <button type="button" class="service-chip" data-value="Cuci AC (1/2-1 PK)">
+                            <span class="chip-icon">🧼</span>
+                            <span class="chip-text">Cuci AC (1/2-1 PK)</span>
+                        </button>
+                        <button type="button" class="service-chip" data-value="Cuci AC (1.5-2 PK)">
+                            <span class="chip-icon">🧼</span>
+                            <span class="chip-text">Cuci AC (1.5-2 PK)</span>
+                        </button>
+                        <button type="button" class="service-chip" data-value="Isi Freon R22">
+                            <span class="chip-icon">❄️</span>
+                            <span class="chip-text">Isi Freon R22</span>
+                        </button>
+                        <button type="button" class="service-chip" data-value="Isi Freon R32/R410a">
+                            <span class="chip-icon">❄️</span>
+                            <span class="chip-text">Isi Freon R32/R410a</span>
+                        </button>
+                        <button type="button" class="service-chip" data-value="Bongkar Pasang AC">
+                            <span class="chip-icon">🔧</span>
+                            <span class="chip-text">Bongkar Pasang AC</span>
+                        </button>
+                        <button type="button" class="service-chip" data-value="Perbaikan Bocor">
+                            <span class="chip-icon">💧</span>
+                            <span class="chip-text">Perbaikan Bocor</span>
+                        </button>
+                        <button type="button" class="service-chip" data-value="AC Tidak Dingin">
+                            <span class="chip-icon">🌡️</span>
+                            <span class="chip-text">AC Tidak Dingin</span>
+                        </button>
+                        <button type="button" class="service-chip" data-value="AC Berisik">
+                            <span class="chip-icon">🔊</span>
+                            <span class="chip-text">AC Berisik</span>
+                        </button>
+                        <button type="button" class="service-chip" data-value="AC Mati Total">
+                            <span class="chip-icon">⚡</span>
+                            <span class="chip-text">AC Mati Total</span>
+                        </button>
+                        <button type="button" class="service-chip" data-value="Air Menetes">
+                            <span class="chip-icon">💧</span>
+                            <span class="chip-text">Air Menetes</span>
+                        </button>
+                    </div>
+                    <input type="hidden" id="selectedServices" required>
+                    <small style="color: #666; display: block; margin-top: 8px;">✅ Klik tombol di atas untuk memilih keluhan/layanan (bisa lebih dari satu)</small>
+                </div>
+                <div class="form-group">
+                    <label>Keluhan tambahan (opsional)</label>
+                    <textarea id="keluhan" rows="2" placeholder="Ceritakan keluhan lebih detail..."></textarea>
+                </div>
+                <div class="form-group">
+                    <label>Tanggal rencana *</label>
+                    <input type="date" id="tanggal" required>
+                </div>
+                <button type="submit" class="btn btn-primary" style="width: 100%;">📤 Kirim Booking</button>
+            </form>
+            <div id="formMessage" style="margin-top: 20px; text-align: center;"></div>
+        </div>
+    </div>
+</section>
+
+<footer class="footer">
+    <div class="container">
+        <p>📱 Ikuti kami: 
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-tiktok"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+        </p>
+        <p>© 2026 AC Deni Service - Service AC Profesional Bogor Selatan</p>
+    </div>
+</footer>
+
+<script src="js/main.js"></script>
+<script>
+    // Set minimal tanggal (H+1)
+    const today = new Date();
+    const tomorrow = new Date(today);
+    tomorrow.setDate(today.getDate() + 1);
+    const yyyy = tomorrow.getFullYear();
+    const mm = String(tomorrow.getMonth() + 1).padStart(2, '0');
+    const dd = String(tomorrow.getDate()).padStart(2, '0');
+    const dateInput = document.getElementById('tanggal');
+    if(dateInput) dateInput.min = `${yyyy}-${mm}-${dd}`;
+    
+    // ========== SERVICE CHIPS LOGIC ==========
+    const serviceChips = document.querySelectorAll('.service-chip');
+    const selectedServicesInput = document.getElementById('selectedServices');
+    
+    function updateSelectedServices() {
+        const selected = [];
+        serviceChips.forEach(chip => {
+            if (chip.classList.contains('active')) {
+                selected.push(chip.dataset.value);
+            }
+        });
+        selectedServicesInput.value = selected.join(', ');
+    }
+    
+    // Add click event to each chip
+    serviceChips.forEach(chip => {
+        chip.addEventListener('click', () => {
+            chip.classList.toggle('active');
+            updateSelectedServices();
+        });
+    });
+    
+    // ========== FORM HANDLER ==========
+    const form = document.getElementById('bookingForm');
+    const formMessage = document.getElementById('formMessage');
+    
+    form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        
+        const selectedChips = document.querySelectorAll('.service-chip.active');
+        const selectedLayanan = Array.from(selectedChips).map(chip => chip.dataset.value);
+        
+        const data = {
+            nama: document.getElementById('nama').value,
+            wa: document.getElementById('wa').value,
+            kelurahan: document.getElementById('kelurahan').value,
+            detailAlamat: document.getElementById('detailAlamat').value,
+            jenisAC: document.getElementById('jenisAC').value,
+            layanan: selectedLayanan.join(', '),
+            keluhan: document.getElementById('keluhan').value,
+            tanggal: document.getElementById('tanggal').value
+        };
+        
+        if (selectedLayanan.length === 0) {
+            formMessage.innerHTML = '⚠️ Pilih minimal satu keluhan/layanan!';
+            formMessage.style.color = 'red';
+            return;
+        }
+        
+        if (!data.nama || !data.wa || !data.kelurahan || !data.detailAlamat || !data.tanggal) {
+            formMessage.innerHTML = '⚠️ Lengkapi semua field yang wajib diisi!';
+            formMessage.style.color = 'red';
+            return;
+        }
+        
+        formMessage.innerHTML = '⏳ Mengirim pesanan...';
+        formMessage.style.color = 'blue';
+        
+        // Simulasi kirim
+        console.log('Data pesanan:', data);
+        
+        setTimeout(() => {
+            formMessage.innerHTML = '✅ Pesanan terkirim! Admin akan hubungi via WhatsApp dalam 15 menit.';
+            formMessage.style.color = 'green';
+            form.reset();
+            // Reset chips
+            document.querySelectorAll('.service-chip.active').forEach(chip => {
+                chip.classList.remove('active');
+            });
+            updateSelectedServices();
+            if(dateInput) dateInput.value = '';
+        }, 1000);
+    });
+</script>
+</body>
+</html>
