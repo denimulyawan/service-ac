@@ -596,3 +596,147 @@ body {
 html {
     scroll-behavior: smooth;
 }
+
+/* ========== TAMBAHAN UNTUK HALAMAN LAYANAN ========== */
+
+/* Card layanan yang bisa diklik */
+.service-card-clickable {
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.service-card-clickable:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 30px -10px rgba(0,0,0,0.15);
+    border-bottom: 3px solid var(--accent);
+}
+
+/* Badge kategori layanan */
+.service-badge {
+    display: inline-block;
+    background: var(--secondary);
+    color: white;
+    font-size: 0.7rem;
+    padding: 3px 10px;
+    border-radius: 20px;
+    margin-top: 8px;
+}
+
+/* Filter buttons */
+.filter-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+    margin-bottom: 40px;
+}
+
+.filter-btn {
+    background: #e2e8f0;
+    border: none;
+    padding: 8px 20px;
+    border-radius: 30px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s;
+    color: var(--text-dark);
+}
+
+.filter-btn.active {
+    background: var(--secondary);
+    color: white;
+}
+
+.filter-btn:hover {
+    background: var(--primary);
+    color: white;
+}
+
+/* Modal Popup */
+.price-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.8);
+    z-index: 3000;
+    justify-content: center;
+    align-items: center;
+    backdrop-filter: blur(5px);
+}
+
+.price-modal-content {
+    background: white;
+    border-radius: 32px;
+    padding: 40px 30px;
+    max-width: 400px;
+    width: 90%;
+    text-align: center;
+    animation: modalPop 0.3s ease;
+    position: relative;
+}
+
+@keyframes modalPop {
+    from {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.price-modal-close {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 28px;
+    cursor: pointer;
+    color: var(--gray);
+    transition: color 0.2s;
+}
+
+.price-modal-close:hover {
+    color: var(--danger);
+}
+
+.price-modal-icon {
+    font-size: 4rem;
+    margin-bottom: 15px;
+}
+
+.price-modal-content h3 {
+    font-size: 1.5rem;
+    color: var(--primary);
+    margin-bottom: 15px;
+}
+
+.price-modal-price {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--accent);
+    margin-bottom: 20px;
+}
+
+.price-modal-content p {
+    color: var(--gray);
+    line-height: 1.6;
+    margin-bottom: 10px;
+}
+
+/* Responsive modal */
+@media (max-width: 480px) {
+    .price-modal-content {
+        padding: 30px 20px;
+    }
+    .price-modal-price {
+        font-size: 1.5rem;
+    }
+    .price-modal-icon {
+        font-size: 3rem;
+    }
+}
