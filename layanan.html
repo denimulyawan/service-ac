@@ -4,7 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Layanan Service AC - PW TEHNIK</title>
-    <meta name="description" content="Daftar lengkap layanan service AC: cuci AC, isi freon, bongkar pasang, perbaikan bocor. Harga terjangkau di Bogor Selatan.">
+    <meta name="description" content="Daftar lengkap layanan service AC: cuci AC, isi freon, bongkar pasang, perbaikan bocor. Harga terjangkau di Kota Bogor.">
+    <meta name="keywords" content="layanan AC Bogor, cuci AC, isi freon, bongkar pasang AC, service AC Bogor">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/jpeg" href="assets/logo.jpeg">
+    <link rel="shortcut icon" href="assets/logo.jpeg" type="image/x-icon">
+    
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="css/style.css">
@@ -13,7 +19,10 @@
 
 <nav class="navbar">
     <div class="nav-container">
-        <a href="index.html" class="logo">PW<span>TEHNIK</span></a>
+        <a href="index.html" class="logo">
+            <img src="assets/logo.jpeg" alt="Logo PW TEHNIK" style="height: 45px; vertical-align: middle; border-radius: 10px;">
+            <span>PW TEHNIK</span>
+        </a>
         <div class="menu-toggle" id="menuToggle">
             <i class="fas fa-bars"></i>
         </div>
@@ -36,11 +45,11 @@
         
         <!-- Filter Kategori -->
         <div class="filter-buttons">
-            <button class="filter-btn active" data-filter="all">Semua</button>
-            <button class="filter-btn" data-filter="cuci">Cuci AC</button>
-            <button class="filter-btn" data-filter="freon">Freon</button>
-            <button class="filter-btn" data-filter="bongkar">Bongkar/Pasang</button>
-            <button class="filter-btn" data-filter="perbaikan">Perbaikan</button>
+            <button class="filter-btn active" data-filter="all">📋 Semua</button>
+            <button class="filter-btn" data-filter="cuci">🧼 Cuci AC</button>
+            <button class="filter-btn" data-filter="freon">❄️ Freon</button>
+            <button class="filter-btn" data-filter="bongkar">🔧 Bongkar/Pasang</button>
+            <button class="filter-btn" data-filter="perbaikan">⚙️ Perbaikan</button>
         </div>
         
         <div class="grid-3" id="servicesList">
@@ -73,48 +82,48 @@
             <a href="#"><i class="fab fa-tiktok"></i></a>
             <a href="#"><i class="fab fa-twitter"></i></a>
         </p>
-        <p>© 2026 PW TEHNIK - Service AC Profesional Bogor Selatan</p>
+        <p>© 2026 PW TEHNIK - Service AC Profesional Kota Bogor</p>
     </div>
 </footer>
 
 <script>
-    // Data layanan lengkap (26 Layanan - dikelompokkan)
+    // Data layanan lengkap (26 Layanan)
     const services = [
-        // CUCI AC (6)
-        { name: "Cuci AC Split 0.5 - 1 PK", price: "Rp 85.000", priceNumber: 85000, category: "cuci", icon: "fa-snowplow", emoji: "🧼", description: "Layanan cuci AC untuk AC Split ukuran 0.5 PK hingga 1 PK. Meliputi pembongkaran, pencucian indoor & outdoor, hingga pemasangan kembali." },
-        { name: "Cuci AC Split Inverter 0.5 - 1 PK", price: "Rp 100.000", priceNumber: 100000, category: "cuci", icon: "fa-snowplow", emoji: "🧼", description: "Layanan cuci AC khusus untuk AC Split Inverter ukuran 0.5 PK hingga 1 PK. Penanganan khusus untuk teknologi inverter." },
+        // ========== CUCI AC (6 Layanan) ==========
+        { name: "Cuci AC Split 0.5 - 1 PK", price: "Rp 85.000", priceNumber: 85000, category: "cuci", icon: "fa-snowplow", emoji: "🧼", description: "Layanan cuci AC untuk AC Split ukuran 0.5 PK hingga 1 PK. Meliputi pembongkaran, pencucian indoor & outdoor, hingga pemasangan kembali. Termasuk pengecekan kelistrikan." },
+        { name: "Cuci AC Split Inverter 0.5 - 1 PK", price: "Rp 100.000", priceNumber: 100000, category: "cuci", icon: "fa-snowplow", emoji: "🧼", description: "Layanan cuci AC khusus untuk AC Split Inverter ukuran 0.5 PK hingga 1 PK. Penanganan khusus untuk teknologi inverter dengan prosedur yang tepat." },
         { name: "Cuci AC Split 1.5 - 2 PK", price: "Rp 125.000", priceNumber: 125000, category: "cuci", icon: "fa-snowplow", emoji: "🧼", description: "Layanan cuci AC untuk AC Split ukuran 1.5 PK hingga 2 PK. Meliputi pembongkaran, pencucian indoor & outdoor, hingga pemasangan kembali." },
         { name: "Cuci AC Split Inverter 1.5 - 2 PK", price: "Rp 150.000", priceNumber: 150000, category: "cuci", icon: "fa-snowplow", emoji: "🧼", description: "Layanan cuci AC khusus untuk AC Split Inverter ukuran 1.5 PK hingga 2 PK. Penanganan khusus untuk teknologi inverter." },
-        { name: "Cuci AC Standing Floor", price: "Rp 750.000", priceNumber: 750000, category: "cuci", icon: "fa-building", emoji: "🏢", description: "Layanan cuci untuk AC Standing Floor (AC lantai). Pembersihan menyeluruh pada unit indoor dan outdoor." },
-        { name: "Cuci AC Cassette", price: "Rp 850.000", priceNumber: 850000, category: "cuci", icon: "fa-border-all", emoji: "📦", description: "Layanan cuci untuk AC Cassette (AC plafon). Cocok untuk ruangan besar seperti kantor atau toko." },
+        { name: "Cuci AC Standing Floor", price: "Rp 750.000", priceNumber: 750000, category: "cuci", icon: "fa-building", emoji: "🏢", description: "Layanan cuci untuk AC Standing Floor (AC lantai). Pembersihan menyeluruh pada unit indoor dan outdoor. Cocok untuk ruangan besar." },
+        { name: "Cuci AC Cassette", price: "Rp 850.000", priceNumber: 850000, category: "cuci", icon: "fa-border-all", emoji: "📦", description: "Layanan cuci untuk AC Cassette (AC plafon). Pembersihan menyeluruh pada 4 sisi unit. Cocok untuk ruangan besar seperti kantor atau toko." },
         
-        // FREON (4)
+        // ========== FREON (4 Layanan) ==========
         { name: "Tambah Freon AC Split 0.5 - 1 PK", price: "Rp 250.000", priceNumber: 250000, category: "freon", icon: "fa-wind", emoji: "❄️", description: "Penambahan freon untuk AC Split ukuran 0.5-1 PK yang freon-nya berkurang. Dilakukan pengecekan tekanan terlebih dahulu." },
         { name: "Tambah Freon AC Split 1.5 - 2 PK", price: "Rp 350.000", priceNumber: 350000, category: "freon", icon: "fa-wind", emoji: "❄️", description: "Penambahan freon untuk AC Split ukuran 1.5-2 PK yang freon-nya berkurang. Dilakukan pengecekan tekanan terlebih dahulu." },
-        { name: "Isi Freon AC 0.5 - 1 PK", price: "Rp 300.000", priceNumber: 300000, category: "freon", icon: "fa-wind", emoji: "❄️", description: "Pengisian freon dari kosong untuk AC ukuran 0.5-1 PK. Termasuk pengecekan kebocoran." },
-        { name: "Isi Freon AC 1.5 - 2 PK", price: "Rp 450.000", priceNumber: 450000, category: "freon", icon: "fa-wind", emoji: "❄️", description: "Pengisian freon dari kosong untuk AC ukuran 1.5-2 PK. Termasuk pengecekan kebocoran." },
+        { name: "Isi Freon AC 0.5 - 1 PK", price: "Rp 300.000", priceNumber: 300000, category: "freon", icon: "fa-wind", emoji: "❄️", description: "Pengisian freon dari kosong untuk AC ukuran 0.5-1 PK. Termasuk pengecekan kebocoran sistem." },
+        { name: "Isi Freon AC 1.5 - 2 PK", price: "Rp 450.000", priceNumber: 450000, category: "freon", icon: "fa-wind", emoji: "❄️", description: "Pengisian freon dari kosong untuk AC ukuran 1.5-2 PK. Termasuk pengecekan kebocoran sistem." },
         
-        // BONGKAR PASANG (6)
-        { name: "Bongkar AC Split 0.5 - 1 PK", price: "Rp 150.000", priceNumber: 150000, category: "bongkar", icon: "fa-tools", emoji: "🔧", description: "Jasa bongkar AC Split ukuran 0.5-1 PK dari lokasi lama. Tidak termasuk pemasangan." },
+        // ========== BONGKAR PASANG (6 Layanan) ==========
+        { name: "Bongkar AC Split 0.5 - 1 PK", price: "Rp 150.000", priceNumber: 150000, category: "bongkar", icon: "fa-tools", emoji: "🔧", description: "Jasa bongkar AC Split ukuran 0.5-1 PK dari lokasi lama. Tidak termasuk pemasangan. Freon akan ditampung sementara." },
         { name: "Bongkar AC Split 1.5 - 2 PK", price: "Rp 200.000", priceNumber: 200000, category: "bongkar", icon: "fa-tools", emoji: "🔧", description: "Jasa bongkar AC Split ukuran 1.5-2 PK dari lokasi lama. Tidak termasuk pemasangan." },
-        { name: "Jasa Pasang AC Split 0.5 - 1 PK", price: "Rp 300.000", priceNumber: 300000, category: "bongkar", icon: "fa-plug", emoji: "🔌", description: "Jasa pemasangan AC Split baru ukuran 0.5-1 PK. Termasuk bracket standar dan pengecekan." },
-        { name: "Jasa Pasang AC Split 1.5 - 2 PK", price: "Rp 425.000", priceNumber: 425000, category: "bongkar", icon: "fa-plug", emoji: "🔌", description: "Jasa pemasangan AC Split baru ukuran 1.5-2 PK. Termasuk bracket standar dan pengecekan." },
-        { name: "Bongkar Pasang AC Split 0.5 - 1 PK", price: "Rp 450.000", priceNumber: 450000, category: "bongkar", icon: "fa-exchange-alt", emoji: "🔄", description: "Jasa bongkar dari lokasi lama dan pasang kembali di lokasi baru untuk AC 0.5-1 PK." },
-        { name: "Bongkar Pasang AC Split 1.5 - 2 PK", price: "Rp 625.000", priceNumber: 625000, category: "bongkar", icon: "fa-exchange-alt", emoji: "🔄", description: "Jasa bongkar dari lokasi lama dan pasang kembali di lokasi baru untuk AC 1.5-2 PK." },
+        { name: "Jasa Pasang AC Split 0.5 - 1 PK", price: "Rp 300.000", priceNumber: 300000, category: "bongkar", icon: "fa-plug", emoji: "🔌", description: "Jasa pemasangan AC Split baru ukuran 0.5-1 PK. Termasuk bracket standar, pengecekan, dan vacuum." },
+        { name: "Jasa Pasang AC Split 1.5 - 2 PK", price: "Rp 425.000", priceNumber: 425000, category: "bongkar", icon: "fa-plug", emoji: "🔌", description: "Jasa pemasangan AC Split baru ukuran 1.5-2 PK. Termasuk bracket standar, pengecekan, dan vacuum." },
+        { name: "Bongkar Pasang AC Split 0.5 - 1 PK", price: "Rp 450.000", priceNumber: 450000, category: "bongkar", icon: "fa-exchange-alt", emoji: "🔄", description: "Jasa bongkar dari lokasi lama dan pasang kembali di lokasi baru untuk AC 0.5-1 PK. Termasuk pengecekan freon." },
+        { name: "Bongkar Pasang AC Split 1.5 - 2 PK", price: "Rp 625.000", priceNumber: 625000, category: "bongkar", icon: "fa-exchange-alt", emoji: "🔄", description: "Jasa bongkar dari lokasi lama dan pasang kembali di lokasi baru untuk AC 1.5-2 PK. Termasuk pengecekan freon." },
         
-        // PERBAIKAN & LAINNYA (10)
-        { name: "Bobok Tembok (per titik)", price: "Rp 50.000", priceNumber: 50000, category: "perbaikan", icon: "fa-hammer", emoji: "🔨", description: "Jasa bobok tembok untuk jalur pipa AC per titik." },
-        { name: "Ganti Kapasitor 0.5 - 2 PK", price: "Rp 350.000 - 475.000", priceNumber: null, category: "perbaikan", icon: "fa-microchip", emoji: "⚡", description: "Penggantian kapasitor AC. Harga tergantung jenis dan ukuran kapasitor." },
-        { name: "Pengelasan (per titik)", price: "Rp 60.000", priceNumber: 60000, category: "perbaikan", icon: "fa-fire", emoji: "🔥", description: "Jasa pengelasan pada pipa AC atau komponen lain per titik kebocoran." },
-        { name: "Flushing Evaporator 0.5 - 1 PK", price: "Rp 150.000", priceNumber: 150000, category: "perbaikan", icon: "fa-water", emoji: "💧", description: "Pembersihan menyeluruh pada evaporator AC ukuran 0.5-1 PK menggunakan cairan khusus." },
+        // ========== PERBAIKAN & LAINNYA (10 Layanan) ==========
+        { name: "Bobok Tembok (per titik)", price: "Rp 50.000", priceNumber: 50000, category: "perbaikan", icon: "fa-hammer", emoji: "🔨", description: "Jasa bobok tembok untuk jalur pipa AC per titik. Sudah termasuk pengecoran kembali." },
+        { name: "Ganti Kapasitor 0.5 - 2 PK", price: "Rp 350.000 - 475.000", priceNumber: null, category: "perbaikan", icon: "fa-microchip", emoji: "⚡", description: "Penggantian kapasitor AC. Harga tergantung jenis dan ukuran kapasitor. Konsultasikan dengan teknisi." },
+        { name: "Pengelasan (per titik)", price: "Rp 60.000", priceNumber: 60000, category: "perbaikan", icon: "fa-fire", emoji: "🔥", description: "Jasa pengelasan pada pipa AC atau komponen lain per titik kebocoran. Hasil rapi dan anti bocor." },
+        { name: "Flushing Evaporator 0.5 - 1 PK", price: "Rp 150.000", priceNumber: 150000, category: "perbaikan", icon: "fa-water", emoji: "💧", description: "Pembersihan menyeluruh pada evaporator AC ukuran 0.5-1 PK menggunakan cairan khusus untuk hasil maksimal." },
         { name: "Flushing Evaporator 1.5 - 2 PK", price: "Rp 175.000", priceNumber: 175000, category: "perbaikan", icon: "fa-water", emoji: "💧", description: "Pembersihan menyeluruh pada evaporator AC ukuran 1.5-2 PK menggunakan cairan khusus." },
-        { name: "Vacuum System 0.5 - 1 PK", price: "Rp 150.000", priceNumber: 150000, category: "perbaikan", icon: "fa-broom", emoji: "🧹", description: "Proses vacuum pada sistem AC untuk menghilangkan uap air dan udara." },
+        { name: "Vacuum System 0.5 - 1 PK", price: "Rp 150.000", priceNumber: 150000, category: "perbaikan", icon: "fa-broom", emoji: "🧹", description: "Proses vacuum pada sistem AC untuk menghilangkan uap air dan udara. Meningkatkan performa AC." },
         { name: "Vacuum System 1.5 - 2 PK", price: "Rp 175.000", priceNumber: 175000, category: "perbaikan", icon: "fa-broom", emoji: "🧹", description: "Proses vacuum pada sistem AC untuk menghilangkan uap air dan udara." },
-        { name: "Pengecekan AC", price: "Rp 75.000", priceNumber: 75000, category: "perbaikan", icon: "fa-stethoscope", emoji: "🩺", description: "Pengecekan menyeluruh kondisi AC untuk mengetahui penyebab kerusakan." },
+        { name: "Pengecekan AC", price: "Rp 75.000", priceNumber: 75000, category: "perbaikan", icon: "fa-stethoscope", emoji: "🩺", description: "Pengecekan menyeluruh kondisi AC untuk mengetahui penyebab kerusakan. Termasuk konsultasi." },
         { name: "Pengisian Oli Kompresor", price: "Rp 275.000 - 375.000", priceNumber: null, category: "perbaikan", icon: "fa-oil-can", emoji: "🛢️", description: "Pengisian oli pada kompresor AC. Harga tergantung jenis oli dan ukuran kompresor." },
-        { name: "Perbaikan Kebocoran", price: "Rp 250.000", priceNumber: 250000, category: "perbaikan", icon: "fa-wrench", emoji: "💧", description: "Perbaikan kebocoran pada pipa AC, sambungan, atau unit AC." },
-        { name: "Repair Modul AC Split 0.5 - 1 PK", price: "Rp 450.000", priceNumber: 450000, category: "perbaikan", icon: "fa-microchip", emoji: "📟", description: "Perbaikan modul/pcb AC Split ukuran 0.5-1 PK yang bermasalah." },
-        { name: "Repair Modul AC Split 1.5 - 2 PK", price: "Rp 650.000", priceNumber: 650000, category: "perbaikan", icon: "fa-microchip", emoji: "📟", description: "Perbaikan modul/pcb AC Split ukuran 1.5-2 PK yang bermasalah." }
+        { name: "Perbaikan Kebocoran", price: "Rp 250.000", priceNumber: 250000, category: "perbaikan", icon: "fa-wrench", emoji: "💧", description: "Perbaikan kebocoran pada pipa AC, sambungan, atau unit AC. Termasuk pengecekan kebocoran." },
+        { name: "Repair Modul AC Split 0.5 - 1 PK", price: "Rp 450.000", priceNumber: 450000, category: "perbaikan", icon: "fa-microchip", emoji: "📟", description: "Perbaikan modul/pcb AC Split ukuran 0.5-1 PK yang bermasalah. Garansi 30 hari." },
+        { name: "Repair Modul AC Split 1.5 - 2 PK", price: "Rp 650.000", priceNumber: 650000, category: "perbaikan", icon: "fa-microchip", emoji: "📟", description: "Perbaikan modul/pcb AC Split ukuran 1.5-2 PK yang bermasalah. Garansi 30 hari." }
     ];
     
     // Tampilkan grid layanan

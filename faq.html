@@ -3,8 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FAQ - Pertanyaan Umum Service AC</title>
-    <meta name="description" content="Pertanyaan umum seputar service AC: berapa lama proses cuci AC, garansi, biaya survei, dan lainnya.">
+    <title>FAQ - Pertanyaan Umum Service AC | PW TEHNIK</title>
+    <meta name="description" content="Pertanyaan umum seputar service AC: berapa lama proses cuci AC, garansi, biaya survei, dan lainnya. Konsultasi gratis.">
+    <meta name="keywords" content="FAQ service AC, pertanyaan service AC, tips AC, konsultasi AC Bogor">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/jpeg" href="assets/logo.jpeg">
+    <link rel="shortcut icon" href="assets/logo.jpeg" type="image/x-icon">
+    
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="css/style.css">
@@ -13,7 +19,10 @@
 
 <nav class="navbar">
     <div class="nav-container">
-        <a href="index.html" class="logo">PW <span>TEHNIK</span></a>
+        <a href="index.html" class="logo">
+            <img src="assets/logo.jpeg" alt="Logo PW TEHNIK" style="height: 45px; vertical-align: middle; border-radius: 10px;">
+            <span>PW TEHNIK</span>
+        </a>
         <div class="menu-toggle" id="menuToggle">
             <i class="fas fa-bars"></i>
         </div>
@@ -32,87 +41,137 @@
 <section class="section">
     <div class="container">
         <h2 class="section-title">❓ Pertanyaan Yang Sering Diajukan</h2>
-        
+        <p style="text-align: center; margin-bottom: 40px; color: var(--gray);">Klik pertanyaan untuk melihat jawaban</p>
+
+        <!-- FAQ 1 -->
         <div class="faq-item">
-            <div class="faq-question">
+            <div class="faq-question" onclick="this.parentElement.classList.toggle('active')">
                 <span>❓ Berapa lama proses cuci AC?</span>
                 <i class="fas fa-chevron-down"></i>
             </div>
             <div class="faq-answer">
-                <p>Proses cuci AC biasanya memakan waktu sekitar 30-45 menit per unit, tergantung kondisi dan tingkat kekotoran AC.</p>
+                <p>Proses cuci AC biasanya memakan waktu sekitar 30-45 menit per unit, tergantung kondisi dan tingkat kekotoran AC. Untuk AC yang sangat kotor bisa memakan waktu hingga 60 menit.</p>
             </div>
         </div>
-        
+
+        <!-- FAQ 2 -->
         <div class="faq-item">
-            <div class="faq-question">
+            <div class="faq-question" onclick="this.parentElement.classList.toggle('active')">
                 <span>❓ Apakah gratis survei?</span>
                 <i class="fas fa-chevron-down"></i>
             </div>
             <div class="faq-answer">
-                <p>✅ Ya, survei dan konsultasi GRATIS untuk wilayah Bogor Selatan. Teknisi kami akan datang untuk mengecek kondisi AC Anda.</p>
+                <p>✅ Ya, survei dan konsultasi GRATIS untuk wilayah Kota Bogor. Teknisi kami akan datang untuk mengecek kondisi AC Anda tanpa dikenakan biaya apapun.</p>
             </div>
         </div>
-        
+
+        <!-- FAQ 3 -->
         <div class="faq-item">
-            <div class="faq-question">
+            <div class="faq-question" onclick="this.parentElement.classList.toggle('active')">
                 <span>❓ Garansi pekerjaan berapa lama?</span>
                 <i class="fas fa-chevron-down"></i>
             </div>
             <div class="faq-answer">
-                <p>Kami memberikan garansi 7 hari untuk setiap pekerjaan service yang kami lakukan. Jika ada masalah yang sama dalam 7 hari, kami akan perbaiki GRATIS.</p>
+                <p>Kami memberikan garansi 7 hari untuk setiap pekerjaan service yang kami lakukan. Jika ada masalah yang sama dalam 7 hari setelah service, kami akan perbaiki GRATIS tanpa biaya tambahan.</p>
             </div>
         </div>
-        
+
+        <!-- FAQ 4 -->
         <div class="faq-item">
-            <div class="faq-question">
-                <span>❓ Apakah melayani di luar Bogor Selatan?</span>
+            <div class="faq-question" onclick="this.parentElement.classList.toggle('active')">
+                <span>❓ Apakah melayani di luar Kota Bogor?</span>
                 <i class="fas fa-chevron-down"></i>
             </div>
             <div class="faq-answer">
-                <p>Saat ini kami fokus melayani wilayah Bogor Selatan. Untuk wilayah luar, silakan hubungi kami terlebih dahulu untuk mengecek ketersediaan jadwal.</p>
+                <p>Saat ini kami fokus melayani wilayah Kota Bogor. Untuk wilayah luar seperti Kabupaten Bogor (Cibinong, Citeureup, dll), silakan hubungi kami terlebih dahulu untuk mengecek ketersediaan jadwal dan biaya tambahan transportasi.</p>
             </div>
         </div>
-        
+
+        <!-- FAQ 5 -->
         <div class="faq-item">
-            <div class="faq-question">
+            <div class="faq-question" onclick="this.parentElement.classList.toggle('active')">
                 <span>❓ Bagaimana cara booking service?</span>
                 <i class="fas fa-chevron-down"></i>
             </div>
             <div class="faq-answer">
-                <p>Anda bisa booking melalui form di halaman <a href="kontak.html">Kontak</a> atau langsung chat WhatsApp kami. Isi data lengkap, dan admin akan mengkonfirmasi dalam 15 menit.</p>
+                <p>Anda bisa booking melalui form di halaman <a href="kontak.html">Kontak</a> atau langsung chat WhatsApp kami di nomor yang tersedia. Isi data lengkap (nama, alamat, jenis layanan), dan admin akan mengkonfirmasi dalam 15 menit.</p>
             </div>
         </div>
-        
+
+        <!-- FAQ 6 -->
         <div class="faq-item">
-            <div class="faq-question">
+            <div class="faq-question" onclick="this.parentElement.classList.toggle('active')">
                 <span>❓ Metode pembayaran apa saja?</span>
                 <i class="fas fa-chevron-down"></i>
             </div>
             <div class="faq-answer">
-                <p>Kami menerima pembayaran tunai, transfer bank (BCA, Mandiri, BRI), dan QRIS (Dana, OVO, Gopay, LinkAja).</p>
+                <p>Kami menerima pembayaran:<br>
+                • Tunai (cash)<br>
+                • Transfer bank (BCA, Mandiri, BRI, BNI)<br>
+                • QRIS (Dana, OVO, Gopay, ShopeePay, LinkAja)</p>
             </div>
         </div>
-        
+
+        <!-- FAQ 7 -->
         <div class="faq-item">
-            <div class="faq-question">
+            <div class="faq-question" onclick="this.parentElement.classList.toggle('active')">
                 <span>❓ Apakah teknisi membawa alat lengkap?</span>
                 <i class="fas fa-chevron-down"></i>
             </div>
             <div class="faq-answer">
-                <p>✅ Ya, teknisi kami selalu membawa peralatan lengkap dan modern untuk menangani berbagai masalah AC.</p>
+                <p>✅ Ya, teknisi kami selalu membawa peralatan lengkap dan modern (vacuum pump, manifold gauge, tang amper, dll) untuk menangani berbagai masalah AC dengan profesional.</p>
             </div>
         </div>
-        
+
+        <!-- FAQ 8 -->
         <div class="faq-item">
-            <div class="faq-question">
+            <div class="faq-question" onclick="this.parentElement.classList.toggle('active')">
                 <span>❓ Berapa biaya panggilan / transportasi?</span>
                 <i class="fas fa-chevron-down"></i>
             </div>
             <div class="faq-answer">
-                <p>Untuk wilayah Bogor Selatan, TIDAK ADA biaya panggilan atau transportasi. Harga yang tertera sudah termasuk semuanya.</p>
+                <p>Untuk wilayah Kota Bogor, TIDAK ADA biaya panggilan atau transportasi. Harga yang tertera di daftar layanan sudah termasuk semuanya. Untuk luar kota, ada biaya tambahan yang disesuaikan dengan jarak.</p>
             </div>
         </div>
-        
+
+        <!-- FAQ 9 -->
+        <div class="faq-item">
+            <div class="faq-question" onclick="this.parentElement.classList.toggle('active')">
+                <span>❓ Apa tanda-tanda AC perlu di isi freon?</span>
+                <i class="fas fa-chevron-down"></i>
+            </div>
+            <div class="faq-answer">
+                <p>Tanda-tanda AC kekurangan freon:<br>
+                • AC tidak dingin seperti biasanya<br>
+                • Terdapat es/bunga es pada pipa AC<br>
+                • Tekanan angin lemah<br>
+                • Kompresor mati hidup (ngetrip)<br>
+                Jika mengalami gejala tersebut, segera hubungi kami.</p>
+            </div>
+        </div>
+
+        <!-- FAQ 10 -->
+        <div class="faq-item">
+            <div class="faq-question" onclick="this.parentElement.classList.toggle('active')">
+                <span>❓ Seberapa sering AC harus di cuci?</span>
+                <i class="fas fa-chevron-down"></i>
+            </div>
+            <div class="faq-answer">
+                <p>Disarankan untuk mencuci AC minimal 3-4 bulan sekali atau 2 kali dalam setahun. Namun jika lingkungan berdebu atau AC sering digunakan, sebaiknya cuci setiap 2-3 bulan sekali untuk menjaga performa dan kesehatan.</p>
+            </div>
+        </div>
+
+        <!-- FAQ 11 -->
+        <div class="faq-item">
+            <div class="faq-question" onclick="this.parentElement.classList.toggle('active')">
+                <span>❓ Apakah ada biaya tambahan untuk kunjungan hari Minggu/libur?</span>
+                <i class="fas fa-chevron-down"></i>
+            </div>
+            <div class="faq-answer">
+                <p>Tidak ada biaya tambahan. Kami melayani service setiap hari termasuk Sabtu, Minggu, dan hari libur nasional dengan harga yang sama. Jadwal fleksibel menyesuaikan dengan pelanggan.</p>
+            </div>
+        </div>
+
         <div class="text-center mt-20">
             <a href="kontak.html" class="btn btn-primary">📅 Booking Sekarang</a>
             <a href="https://wa.me/6281234567890" class="btn btn-wa"><i class="fab fa-whatsapp"></i> Tanya via WA</a>
@@ -128,10 +187,29 @@
             <a href="#"><i class="fab fa-tiktok"></i></a>
             <a href="#"><i class="fab fa-twitter"></i></a>
         </p>
-        <p>© 2026 PW TEHNIK - Service AC Profesional Bogor Selatan</p>
+        <p>© 2026 PW TEHNIK - Service AC Profesional Kota Bogor</p>
     </div>
 </footer>
 
-<script src="js/main.js"></script>
+<script>
+    // ========== MOBILE MENU TOGGLE ==========
+    const menuToggle = document.getElementById('menuToggle');
+    const navMenu = document.getElementById('navMenu');
+    
+    if (menuToggle && navMenu) {
+        menuToggle.addEventListener('click', function() {
+            navMenu.classList.toggle('active');
+        });
+        
+        // Tutup menu saat klik link
+        document.querySelectorAll('.nav-menu a').forEach(function(link) {
+            link.addEventListener('click', function() {
+                navMenu.classList.remove('active');
+            });
+        });
+    }
+    
+    console.log('FAQ page loaded - Accordion siap pakai dengan onclick');
+</script>
 </body>
 </html>

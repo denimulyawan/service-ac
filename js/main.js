@@ -1,16 +1,21 @@
-// ========== MOBILE MENU TOGGLE ==========
+// ========== WAIT UNTUK DOM SIAP ==========
 document.addEventListener('DOMContentLoaded', function() {
+    console.log('Main.js loaded - DOM ready');
+    
+    // ========== MOBILE MENU TOGGLE ==========
     const menuToggle = document.getElementById('menuToggle');
     const navMenu = document.getElementById('navMenu');
     
     if (menuToggle && navMenu) {
-        menuToggle.addEventListener('click', () => {
+        menuToggle.addEventListener('click', function() {
             navMenu.classList.toggle('active');
+            console.log('Menu toggled');
         });
         
         // Tutup menu saat klik link
-        document.querySelectorAll('.nav-menu a').forEach(link => {
-            link.addEventListener('click', () => {
+        const navLinks = document.querySelectorAll('.nav-menu a');
+        navLinks.forEach(function(link) {
+            link.addEventListener('click', function() {
                 navMenu.classList.remove('active');
             });
         });
@@ -18,12 +23,33 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // ========== SET ACTIVE MENU ==========
     const currentPage = window.location.pathname.split('/').pop() || 'index.html';
-    document.querySelectorAll('.nav-menu a').forEach(link => {
+    const allNavLinks = document.querySelectorAll('.nav-menu a');
+    allNavLinks.forEach(function(link) {
         const href = link.getAttribute('href');
         if (href === currentPage) {
             link.classList.add('active');
         }
     });
+    
+    // ========== FAQ ACCORDION ==========
+    const faqItems = document.querySelectorAll('.faq-item');
+    console.log('FAQ items found:', faqItems.length);
+    
+    if (faqItems.length > 0) {
+        faqItems.forEach(function(item) {
+            const question = item.querySelector('.faq-question');
+            if (question) {
+                // Hapus event listener lama (pakai yang baru)
+                question.removeEventListener('click', toggleFaq);
+                question.addEventListener('click', toggleFaq);
+                
+                function toggleFaq() {
+                    console.log('FAQ clicked');
+                    item.classList.toggle('active');
+                }
+            }
+        });
+    }
     
     // ========== PORTFOLIO LIGHTBOX ==========
     const modal = document.getElementById('lightboxModal');
@@ -34,26 +60,19 @@ document.addEventListener('DOMContentLoaded', function() {
         window.openLightbox = function(imgSrc) {
             modal.style.display = 'block';
             modalImg.src = imgSrc;
-        }
+            console.log('Lightbox opened:', imgSrc);
+        };
         
         if (closeModal) {
             closeModal.onclick = function() {
                 modal.style.display = 'none';
-            }
+            };
         }
         
         modal.onclick = function() {
             modal.style.display = 'none';
-        }
+        };
     }
-    
-    // ========== FAQ ACCORDION ==========
-    document.querySelectorAll('.faq-question').forEach(question => {
-        question.addEventListener('click', () => {
-            const faqItem = question.parentElement;
-            faqItem.classList.toggle('active');
-        });
-    });
     
     // ========== SERVICE CHIPS (TOGGLE BUTTON) ==========
     const serviceChips = document.querySelectorAll('.service-chip');
@@ -62,7 +81,8 @@ document.addEventListener('DOMContentLoaded', function() {
     function updateSelectedServices() {
         if (selectedServicesInput) {
             const selected = [];
-            document.querySelectorAll('.service-chip.active').forEach(chip => {
+            const activeChips = document.querySelectorAll('.service-chip.active');
+            activeChips.forEach(function(chip) {
                 selected.push(chip.dataset.value);
             });
             selectedServicesInput.value = selected.join(', ');
@@ -70,10 +90,11 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     
     if (serviceChips.length > 0) {
-        serviceChips.forEach(chip => {
-            chip.addEventListener('click', () => {
+        serviceChips.forEach(function(chip) {
+            chip.addEventListener('click', function() {
                 chip.classList.toggle('active');
                 updateSelectedServices();
+                console.log('Service chip toggled');
             });
         });
     }
@@ -90,14 +111,16 @@ document.addEventListener('DOMContentLoaded', function() {
     const mm = String(tomorrow.getMonth() + 1).padStart(2, '0');
     const dd = String(tomorrow.getDate()).padStart(2, '0');
     const dateInput = document.getElementById('tanggal');
-    if(dateInput) dateInput.min = `${yyyy}-${mm}-${dd}`;
+    if (dateInput) {
+        dateInput.min = yyyy + '-' + mm + '-' + dd;
+    }
     
     if (bookingForm) {
-        bookingForm.addEventListener('submit', async (e) => {
+        bookingForm.addEventListener('submit', function(e) {
             e.preventDefault();
             
-            const selectedChips = document.querySelectorAll('.service-chip.active');
-            if (selectedChips.length === 0) {
+            const activeChips = document.querySelectorAll('.service-chip.active');
+            if (activeChips.length === 0) {
                 if (formMessage) {
                     formMessage.innerHTML = '⚠️ Pilih minimal satu layanan!';
                     formMessage.style.color = 'red';
@@ -105,37 +128,46 @@ document.addEventListener('DOMContentLoaded', function() {
                 return;
             }
             
-            const selectedLayanan = Array.from(selectedChips).map(chip => chip.dataset.value);
+            const selectedLayanan = [];
+            activeChips.forEach(function(chip) {
+                selectedLayanan.push(chip.dataset.value);
+            });
             
-            const data = {
-                nama: document.getElementById('nama')?.value || '',
-                wa: document.getElementById('wa')?.value || '',
-                kelurahan: document.getElementById('kelurahan')?.value || '',
-                detailAlamat: document.getElementById('detailAlamat')?.value || '',
-                jenisAC: document.getElementById('jenisAC')?.value || '',
-                layanan: selectedLayanan.join(', '),
-                keluhan: document.getElementById('keluhan')?.value || '',
-                tanggal: document.getElementById('tanggal')?.value || ''
-            };
+            const nama = document.getElementById('nama') ? document.getElementById('nama').value : '';
+            const wa = document.getElementById('wa') ? document.getElementById('wa').value : '';
+            const kelurahan = document.getElementById('kelurahan') ? document.getElementById('kelurahan').value : '';
+            const detailAlamat = document.getElementById('detailAlamat') ? document.getElementById('detailAlamat').value : '';
+            const jenisAC = document.getElementById('jenisAC') ? document.getElementById('jenisAC').value : '';
+            const keluhan = document.getElementById('keluhan') ? document.getElementById('keluhan').value : '';
+            const tanggal = document.getElementById('tanggal') ? document.getElementById('tanggal').value : '';
             
             if (formMessage) {
                 formMessage.innerHTML = '⏳ Mengirim pesanan...';
                 formMessage.style.color = 'blue';
             }
             
-            // Simulasi kirim (ganti dengan fetch ke Google Apps Script nanti)
-            setTimeout(() => {
+            // Simulasi kirim
+            setTimeout(function() {
                 if (formMessage) {
                     formMessage.innerHTML = '✅ Pesanan terkirim! Admin akan hubungi via WhatsApp dalam 15 menit.';
                     formMessage.style.color = 'green';
                 }
                 bookingForm.reset();
-                document.querySelectorAll('.service-chip.active').forEach(chip => {
+                const allChips = document.querySelectorAll('.service-chip.active');
+                allChips.forEach(function(chip) {
                     chip.classList.remove('active');
                 });
                 updateSelectedServices();
-                if(dateInput) dateInput.value = '';
+                if (dateInput) dateInput.value = '';
             }, 1000);
+            
+            console.log('Form submitted:', {
+                nama: nama,
+                wa: wa,
+                layanan: selectedLayanan.join(', ')
+            });
         });
     }
+    
+    console.log('Main.js - semua event listener terpasang');
 });

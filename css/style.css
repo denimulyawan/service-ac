@@ -252,7 +252,7 @@ body {
     font-weight: normal;
 }
 
-/* ========== SERVICE CHIPS (TOGGLE BUTTON MODERN) ========== */
+/* ========== SERVICE CHIPS ========== */
 .services-chips {
     display: flex;
     flex-wrap: wrap;
@@ -387,11 +387,13 @@ body {
 }
 
 /* ========== FAQ ACCORDION ========== */
+/* ========== FAQ ACCORDION - HALUS ========== */
 .faq-item {
     background: var(--white);
     border-radius: 16px;
     margin-bottom: 15px;
     overflow: hidden;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
 }
 
 .faq-question {
@@ -402,6 +404,7 @@ body {
     justify-content: space-between;
     align-items: center;
     background: var(--white);
+    transition: background 0.2s ease;
 }
 
 .faq-question:hover {
@@ -409,23 +412,32 @@ body {
 }
 
 .faq-question i {
-    transition: transform 0.3s;
-}
-
-.faq-answer {
-    padding: 0 20px;
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.3s ease;
-}
-
-.faq-item.active .faq-answer {
-    padding: 0 20px 20px 20px;
-    max-height: 300px;
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    font-size: 1rem;
+    color: var(--secondary);
 }
 
 .faq-item.active .faq-question i {
     transform: rotate(180deg);
+}
+
+.faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    padding: 0 20px;
+}
+
+.faq-item.active .faq-answer {
+    max-height: 500px;
+    padding: 0 20px 20px 20px;
+    transition: max-height 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.faq-answer p {
+    margin: 0;
+    line-height: 1.7;
+    color: var(--gray);
 }
 
 /* ========== TESTIMONI ========== */
@@ -598,8 +610,6 @@ html {
 }
 
 /* ========== TAMBAHAN UNTUK HALAMAN LAYANAN ========== */
-
-/* Card layanan yang bisa diklik */
 .service-card-clickable {
     cursor: pointer;
     transition: all 0.3s ease;
@@ -611,7 +621,6 @@ html {
     border-bottom: 3px solid var(--accent);
 }
 
-/* Badge kategori layanan */
 .service-badge {
     display: inline-block;
     background: var(--secondary);
@@ -622,7 +631,6 @@ html {
     margin-top: 8px;
 }
 
-/* Filter buttons */
 .filter-buttons {
     display: flex;
     flex-wrap: wrap;
@@ -653,7 +661,6 @@ html {
     color: white;
 }
 
-/* Modal Popup */
 .price-modal {
     display: none;
     position: fixed;
@@ -728,7 +735,6 @@ html {
     margin-bottom: 10px;
 }
 
-/* Responsive modal */
 @media (max-width: 480px) {
     .price-modal-content {
         padding: 30px 20px;
@@ -738,5 +744,38 @@ html {
     }
     .price-modal-icon {
         font-size: 3rem;
+    }
+}
+
+/* ========== NAVBAR DIPERBESAR ========== */
+.navbar {
+    padding: 10px 0;
+}
+
+.nav-container {
+    padding: 10px 20px;
+}
+
+.logo {
+    font-size: 2rem;
+    font-weight: 800;
+}
+
+.logo img {
+    height: 50px !important;
+}
+
+.nav-menu a {
+    font-size: 1.1rem;
+    padding: 8px 0;
+}
+
+@media (max-width: 768px) {
+    .logo {
+        font-size: 1.5rem;
+    }
+    
+    .logo img {
+        height: 40px !important;
     }
 }
