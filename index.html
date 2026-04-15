@@ -2,7 +2,7 @@
 <html lang="id">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
     <title>PW TEHNIK - Service AC Profesional Kota Bogor</title>
     <meta name="description" content="Service AC profesional di Kota Bogor. Teknisi berpengalaman, harga terjangkau, garansi 7 hari. Melayani cuci AC, isi freon, bongkar pasang.">
     <meta name="keywords" content="service AC Bogor, cuci AC Bogor, isi freon Bogor, teknisi AC">
@@ -20,7 +20,7 @@
 <nav class="navbar">
     <div class="nav-container">
         <a href="index.html" class="logo">
-            <img src="assets/logo.jpeg" alt="Logo PW TEHNIK" style="height: 45px; vertical-align: middle; border-radius: 10px;">
+            <img src="assets/logo.jpeg" alt="Logo PW TEHNIK">
             <span>PW TEHNIK</span>
         </a>
         <div class="menu-toggle" id="menuToggle">
@@ -38,18 +38,54 @@
     </div>
 </nav>
 
-<section class="hero">
+<!-- SLIDER FULL WIDTH TEPAT DI BAWAH NAVBAR -->
+<section class="hero-slider-full">
+    <div class="slider-container-full">
+        <div class="slider-wrapper-full">
+            <div class="slides-full" id="slidesFull">
+                <div class="slide-full">
+                    <img src="assets/teknisi1.jpeg" alt="Teknisi sedang perbaiki AC">
+                </div>
+                <div class="slide-full">
+                    <img src="assets/teknisi2.jpeg" alt="Cuci AC profesional">
+                </div>
+                <div class="slide-full">
+                    <img src="assets/teknisi3.jpeg" alt="Isi freon AC">
+                </div>
+                <div class="slide-full">
+                    <img src="assets/teknisi4.jpeg" alt="Bongkar pasang AC">
+                </div>
+            </div>
+        </div>
+        <button class="slider-btn-full btn-prev-full" id="prevBtnFull">❮</button>
+        <button class="slider-btn-full btn-next-full" id="nextBtnFull">❯</button>
+        <div class="dots-full" id="dotsFull"></div>
+    </div>
+</section>
+
+<!-- KONTEN UTAMA (TEKS DAN LAYANAN) -->
+<section class="hero-content-section">
     <div class="container">
-        <h1>PW TEHNIK</h1>
-        <p class="tagline">Service AC Profesional Se-Kota Bogor</p>
-        <ul class="features">
-            <li><i class="fas fa-check-circle"></i> Teknisi Berpengalaman</li>
-            <li><i class="fas fa-check-circle"></i> Harga Terjangkau</li>
-            <li><i class="fas fa-check-circle"></i> Garansi 7 Hari</li>
-        </ul>
-        <div class="btn-group">
-            <a href="kontak.html" class="btn btn-primary">📅 Booking Sekarang</a>
-            <a href="https://wa.me/6281234567890?text=Halo%20PW%20TEHNIK%2C%20saya%20mau%20booking%20service%20AC" class="btn btn-wa"><i class="fab fa-whatsapp"></i> Hubungi WA</a>
+        <div class="hero-content">
+            <div class="hero-badge">⚡ Spesialis AC dan Sistem Pendingin Bogor</div>
+            <h1>PW TEHNIK</h1>
+            <p class="hero-tagline">Service AC Profesional Se-Kota Bogor</p>
+            <ul class="hero-features">
+                <li><i class="fas fa-check-circle"></i> Perawatan AC</li>
+                <li><i class="fas fa-check-circle"></i> Bongkar pasang AC</li>
+                <li><i class="fas fa-check-circle"></i> Isi Freon & Cuci AC</li>
+            </ul>
+            <p class="hero-location">
+                <i class="fas fa-map-marker-alt"></i> Melayani service AC di seluruh area Bogor
+            </p>
+            <div class="btn-group-hero">
+                <a href="https://wa.me/6281234567890?text=Halo%20PW%20TEHNIK%2C%20saya%20mau%20booking%20service%20AC" class="btn-wa-hero">
+                    <i class="fab fa-whatsapp"></i> Hubungi WA
+                </a>
+                <a href="kontak.html" class="btn-outline-hero">
+                    📅 Booking Sekarang
+                </a>
+            </div>
         </div>
     </div>
 </section>
@@ -57,19 +93,19 @@
 <section class="section">
     <div class="container">
         <h2 class="section-title">🔧 Layanan Unggulan</h2>
-        <div class="grid-3" id="previewServices">
+        <div class="grid-3">
             <div class="card text-center">
-                <i class="fas fa-snowplow" style="font-size: 3rem; color: var(--secondary);"></i>
+                <i class="fas fa-snowplow"></i>
                 <h3>Cuci AC</h3>
                 <p>Mulai Rp 85.000</p>
             </div>
             <div class="card text-center">
-                <i class="fas fa-wind" style="font-size: 3rem; color: var(--secondary);"></i>
+                <i class="fas fa-wind"></i>
                 <h3>Isi Freon</h3>
                 <p>Mulai Rp 250.000</p>
             </div>
             <div class="card text-center">
-                <i class="fas fa-tools" style="font-size: 3rem; color: var(--secondary);"></i>
+                <i class="fas fa-tools"></i>
                 <h3>Bongkar Pasang</h3>
                 <p>Rp 450.000</p>
             </div>
@@ -80,22 +116,22 @@
     </div>
 </section>
 
-<section class="section" style="background: #f1f5f9;">
+<section class="section bg-light">
     <div class="container">
         <h2 class="section-title">⭐ Yang Kami Tawarkan</h2>
         <div class="grid-3">
             <div class="card text-center">
-                <i class="fas fa-clock" style="font-size: 2.5rem; color: var(--accent);"></i>
+                <i class="fas fa-clock"></i>
                 <h3>Respon Cepat</h3>
                 <p>Konfirmasi dalam 15 menit</p>
             </div>
             <div class="card text-center">
-                <i class="fas fa-certificate" style="font-size: 2.5rem; color: var(--accent);"></i>
+                <i class="fas fa-certificate"></i>
                 <h3>Teknisi Bersertifikat</h3>
                 <p>Berpengalaman dan profesional</p>
             </div>
             <div class="card text-center">
-                <i class="fas fa-shield-alt" style="font-size: 2.5rem; color: var(--accent);"></i>
+                <i class="fas fa-shield-alt"></i>
                 <h3>Garansi 7 Hari</h3>
                 <p>Jaminan kepuasan pelanggan</p>
             </div>

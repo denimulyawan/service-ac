@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tentang PW TEHNIK - Profil & Area Jangkauan</title>
-    <meta name="description" content="PW TEHNIK melayani service AC di seluruh Kota Bogor. Teknisi berpengalaman, garansi 7 hari. Cek area jangkauan kami.">
+    <meta name="description" content="PW TEHNIK melayani service AC di seluruh Kota Bogor. Teknisi berpengalaman, garansi 7 hari. Cek area jangkauan kami per kecamatan.">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="css/style.css">
@@ -13,7 +13,10 @@
 
 <nav class="navbar">
     <div class="nav-container">
-        <a href="index.html" class="logo">PW<span>TEHNIK</span></a>
+        <a href="index.html" class="logo">
+            <img src="assets/logo.jpeg" alt="Logo PW TEHNIK">
+            <span>PW TEHNIK</span>
+        </a>
         <div class="menu-toggle" id="menuToggle">
             <i class="fas fa-bars"></i>
         </div>
@@ -65,26 +68,134 @@
         </div>
         
         <div class="card mt-20">
-            <h3 style="margin-bottom: 15px;">📍 Area Jangkauan (Kota Bogor)</h3>
-            <p>Kami melayani seluruh wilayah Kota Bogor, termasuk:</p>
-            <div class="area-list">
-                <div class="area-item">Batutulis</div>
-                <div class="area-item">Bojongkerta</div>
-                <div class="area-item">Bondongan</div>
-                <div class="area-item">Cikaret</div>
-                <div class="area-item">Cipaku</div>
-                <div class="area-item">Empang</div>
-                <div class="area-item">Genteng</div>
-                <div class="area-item">Harjasari</div>
-                <div class="area-item">Kertamaya</div>
-                <div class="area-item">Lawanggintung</div>
-                <div class="area-item">Muarasari</div>
-                <div class="area-item">Mulyaharja</div>
-                <div class="area-item">Pakuan</div>
-                <div class="area-item">Pamoyanan</div>
-                <div class="area-item">Rancamaya</div>
-                <div class="area-item">Ranggamekar</div>
+            <h3 style="margin-bottom: 15px;">📍 Area Jangkauan Kota Bogor</h3>
+            <p>Kami melayani seluruh wilayah Kota Bogor. Klik kecamatan di bawah untuk melihat kelurahan:</p>
+            
+            <!-- Tabs Kecamatan -->
+            <div class="kecamatan-tabs" id="kecamatanTabs">
+                <button class="kecamatan-tab active" data-kecamatan="selatan">🌿 Bogor Selatan</button>
+                <button class="kecamatan-tab" data-kecamatan="utara">⬆️ Bogor Utara</button>
+                <button class="kecamatan-tab" data-kecamatan="barat">⬅️ Bogor Barat</button>
+                <button class="kecamatan-tab" data-kecamatan="tengah">🏙️ Bogor Tengah</button>
+                <button class="kecamatan-tab" data-kecamatan="timur">➡️ Bogor Timur</button>
             </div>
+            
+            <!-- Panel Kelurahan per Kecamatan -->
+            <div id="kelurahanPanels">
+                <!-- Bogor Selatan -->
+                <div class="kelurahan-panel active-panel" data-panel="selatan">
+                    <div class="kecamatan-header">
+                        <i class="fas fa-tree"></i>
+                        <h4>Kelurahan Bogor Selatan</h4>
+                    </div>
+                    <div class="kelurahan-grid">
+                        <div class="kelurahan-item"><i class="fas fa-location-dot"></i> Batutulis</div>
+                        <div class="kelurahan-item"><i class="fas fa-location-dot"></i> Bojongkerta</div>
+                        <div class="kelurahan-item"><i class="fas fa-location-dot"></i> Bondongan</div>
+                        <div class="kelurahan-item"><i class="fas fa-location-dot"></i> Cikaret</div>
+                        <div class="kelurahan-item"><i class="fas fa-location-dot"></i> Cipaku</div>
+                        <div class="kelurahan-item"><i class="fas fa-location-dot"></i> Empang</div>
+                        <div class="kelurahan-item"><i class="fas fa-location-dot"></i> Genteng</div>
+                        <div class="kelurahan-item"><i class="fas fa-location-dot"></i> Harjasari</div>
+                        <div class="kelurahan-item"><i class="fas fa-location-dot"></i> Kertamaya</div>
+                        <div class="kelurahan-item"><i class="fas fa-location-dot"></i> Lawanggintung</div>
+                        <div class="kelurahan-item"><i class="fas fa-location-dot"></i> Muarasari</div>
+                        <div class="kelurahan-item"><i class="fas fa-location-dot"></i> Mulyaharja</div>
+                        <div class="kelurahan-item"><i class="fas fa-location-dot"></i> Pakuan</div>
+                        <div class="kelurahan-item"><i class="fas fa-location-dot"></i> Pamoyanan</div>
+                        <div class="kelurahan-item"><i class="fas fa-location-dot"></i> Rancamaya</div>
+                        <div class="kelurahan-item"><i class="fas fa-location-dot"></i> Ranggamekar</div>
+                    </div>
+                </div>
+                
+                <!-- Bogor Utara -->
+                <div class="kelurahan-panel" data-panel="utara">
+                    <div class="kecamatan-header">
+                        <i class="fas fa-mountain"></i>
+                        <h4>Kelurahan Bogor Utara</h4>
+                    </div>
+                    <div class="kelurahan-grid">
+                        <div class="kelurahan-item"><i class="fas fa-location-dot"></i> Bantarjati</div>
+                        <div class="kelurahan-item"><i class="fas fa-location-dot"></i> Cibuluh</div>
+                        <div class="kelurahan-item"><i class="fas fa-location-dot"></i> Ciluar</div>
+                        <div class="kelurahan-item"><i class="fas fa-location-dot"></i> Cimahpar</div>
+                        <div class="kelurahan-item"><i class="fas fa-location-dot"></i> Ciparigi</div>
+                        <div class="kelurahan-item"><i class="fas fa-location-dot"></i> Kedungbadak</div>
+                        <div class="kelurahan-item"><i class="fas fa-location-dot"></i> Tanah Baru</div>
+                        <div class="kelurahan-item"><i class="fas fa-location-dot"></i> Tegal Gundil</div>
+                    </div>
+                </div>
+                
+                <!-- Bogor Barat -->
+                <div class="kelurahan-panel" data-panel="barat">
+                    <div class="kecamatan-header">
+                        <i class="fas fa-water"></i>
+                        <h4>Kelurahan Bogor Barat</h4>
+                    </div>
+                    <div class="kelurahan-grid">
+                        <div class="kelurahan-item"><i class="fas fa-location-dot"></i> Balungbangjaya</div>
+                        <div class="kelurahan-item"><i class="fas fa-location-dot"></i> Bubulak</div>
+                        <div class="kelurahan-item"><i class="fas fa-location-dot"></i> Cilendek Barat</div>
+                        <div class="kelurahan-item"><i class="fas fa-location-dot"></i> Cilendek Timur</div>
+                        <div class="kelurahan-item"><i class="fas fa-location-dot"></i> Curugmekar</div>
+                        <div class="kelurahan-item"><i class="fas fa-location-dot"></i> Curug</div>
+                        <div class="kelurahan-item"><i class="fas fa-location-dot"></i> Gunungbatu</div>
+                        <div class="kelurahan-item"><i class="fas fa-location-dot"></i> Loji</div>
+                        <div class="kelurahan-item"><i class="fas fa-location-dot"></i> Margajaya</div>
+                        <div class="kelurahan-item"><i class="fas fa-location-dot"></i> Menteng</div>
+                        <div class="kelurahan-item"><i class="fas fa-location-dot"></i> Pasirjaya</div>
+                        <div class="kelurahan-item"><i class="fas fa-location-dot"></i> Pasirkuda</div>
+                        <div class="kelurahan-item"><i class="fas fa-location-dot"></i> Pasirmulya</div>
+                        <div class="kelurahan-item"><i class="fas fa-location-dot"></i> Semplak</div>
+                        <div class="kelurahan-item"><i class="fas fa-location-dot"></i> Sindangbarang</div>
+                        <div class="kelurahan-item"><i class="fas fa-location-dot"></i> Situ Gede</div>
+                    </div>
+                </div>
+                
+                <!-- Bogor Tengah -->
+                <div class="kelurahan-panel" data-panel="tengah">
+                    <div class="kecamatan-header">
+                        <i class="fas fa-city"></i>
+                        <h4>Kelurahan Bogor Tengah</h4>
+                    </div>
+                    <div class="kelurahan-grid">
+                        <div class="kelurahan-item"><i class="fas fa-location-dot"></i> Babakan</div>
+                        <div class="kelurahan-item"><i class="fas fa-location-dot"></i> Babakanpasar</div>
+                        <div class="kelurahan-item"><i class="fas fa-location-dot"></i> Baranangsiang</div>
+                        <div class="kelurahan-item"><i class="fas fa-location-dot"></i> Cibogor</div>
+                        <div class="kelurahan-item"><i class="fas fa-location-dot"></i> Cikaret</div>
+                        <div class="kelurahan-item"><i class="fas fa-location-dot"></i> Cilendek</div>
+                        <div class="kelurahan-item"><i class="fas fa-location-dot"></i> Empang</div>
+                        <div class="kelurahan-item"><i class="fas fa-location-dot"></i> Gudang</div>
+                        <div class="kelurahan-item"><i class="fas fa-location-dot"></i> Katulampa</div>
+                        <div class="kelurahan-item"><i class="fas fa-location-dot"></i> Kebonkelapa</div>
+                        <div class="kelurahan-item"><i class="fas fa-location-dot"></i> Kencana</div>
+                        <div class="kelurahan-item"><i class="fas fa-location-dot"></i> Pabaton</div>
+                        <div class="kelurahan-item"><i class="fas fa-location-dot"></i> Paledang</div>
+                        <div class="kelurahan-item"><i class="fas fa-location-dot"></i> Panaragan</div>
+                        <div class="kelurahan-item"><i class="fas fa-location-dot"></i> Sempur</div>
+                        <div class="kelurahan-item"><i class="fas fa-location-dot"></i> Tegallega</div>
+                    </div>
+                </div>
+                
+                <!-- Bogor Timur -->
+                <div class="kelurahan-panel" data-panel="timur">
+                    <div class="kecamatan-header">
+                        <i class="fas fa-church"></i>
+                        <h4>Kelurahan Bogor Timur</h4>
+                    </div>
+                    <div class="kelurahan-grid">
+                        <div class="kelurahan-item"><i class="fas fa-location-dot"></i> Baranangsiang</div>
+                        <div class="kelurahan-item"><i class="fas fa-location-dot"></i> Katulampa</div>
+                        <div class="kelurahan-item"><i class="fas fa-location-dot"></i> Sindangrasa</div>
+                        <div class="kelurahan-item"><i class="fas fa-location-dot"></i> Sindangsari</div>
+                        <div class="kelurahan-item"><i class="fas fa-location-dot"></i> Sukasari</div>
+                        <div class="kelurahan-item"><i class="fas fa-location-dot"></i> Tajur</div>
+                        <div class="kelurahan-item"><i class="fas fa-location-dot"></i> Tanah Sareal</div>
+                    </div>
+                </div>
+            </div>
+            
             <p class="mt-20"><i class="fas fa-map-marker-alt" style="color: var(--accent);"></i> <strong>Di luar area? Hubungi kami untuk info ketersediaan!</strong></p>
         </div>
         

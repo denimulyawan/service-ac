@@ -12,7 +12,6 @@ document.addEventListener('DOMContentLoaded', function() {
             console.log('Menu toggled');
         });
         
-        // Tutup menu saat klik link
         const navLinks = document.querySelectorAll('.nav-menu a');
         navLinks.forEach(function(link) {
             link.addEventListener('click', function() {
@@ -31,6 +30,103 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
     
+    // ========== SLIDER FULL WIDTH ==========
+    const slidesContainer = document.getElementById('slidesFull');
+    const prevBtn = document.getElementById('prevBtnFull');
+    const nextBtn = document.getElementById('nextBtnFull');
+    const dotsContainer = document.getElementById('dotsFull');
+    
+    if (slidesContainer && prevBtn && nextBtn) {
+        const slides = document.querySelectorAll('#slidesFull .slide-full');
+        const slideCount = slides.length;
+        let currentIndex = 0;
+        let autoSlideInterval;
+        const autoSlideDelay = 5000;
+        
+        if (dotsContainer && slideCount > 0) {
+            dotsContainer.innerHTML = '';
+            for (let i = 0; i < slideCount; i++) {
+                const dot = document.createElement('div');
+                dot.classList.add('dot-full');
+                dot.setAttribute('data-index', i);
+                dot.addEventListener('click', function() {
+                    goToSlide(parseInt(this.getAttribute('data-index')));
+                    resetAutoSlide();
+                });
+                dotsContainer.appendChild(dot);
+            }
+        }
+        
+        function updateSlider() {
+            const offset = -currentIndex * 100;
+            slidesContainer.style.transform = 'translateX(' + offset + '%)';
+            
+            const dots = document.querySelectorAll('.dot-full');
+            dots.forEach(function(dot, index) {
+                if (index === currentIndex) {
+                    dot.classList.add('active');
+                } else {
+                    dot.classList.remove('active');
+                }
+            });
+        }
+        
+        function goToSlide(index) {
+            if (index < 0) {
+                currentIndex = slideCount - 1;
+            } else if (index >= slideCount) {
+                currentIndex = 0;
+            } else {
+                currentIndex = index;
+            }
+            updateSlider();
+        }
+        
+        function nextSlide() {
+            goToSlide(currentIndex + 1);
+        }
+        
+        function prevSlide() {
+            goToSlide(currentIndex - 1);
+        }
+        
+        function startAutoSlide() {
+            if (autoSlideInterval) clearInterval(autoSlideInterval);
+            autoSlideInterval = setInterval(function() {
+                nextSlide();
+            }, autoSlideDelay);
+        }
+        
+        function resetAutoSlide() {
+            startAutoSlide();
+        }
+        
+        prevBtn.addEventListener('click', function() {
+            prevSlide();
+            resetAutoSlide();
+        });
+        
+        nextBtn.addEventListener('click', function() {
+            nextSlide();
+            resetAutoSlide();
+        });
+        
+        updateSlider();
+        startAutoSlide();
+        
+        const sliderContainer = document.querySelector('.slider-container-full');
+        if (sliderContainer) {
+            sliderContainer.addEventListener('mouseenter', function() {
+                if (autoSlideInterval) clearInterval(autoSlideInterval);
+            });
+            sliderContainer.addEventListener('mouseleave', function() {
+                startAutoSlide();
+            });
+        }
+        
+        console.log('Slider full width initialized, slide count:', slideCount);
+    }
+    
     // ========== FAQ ACCORDION ==========
     const faqItems = document.querySelectorAll('.faq-item');
     console.log('FAQ items found:', faqItems.length);
@@ -39,7 +135,6 @@ document.addEventListener('DOMContentLoaded', function() {
         faqItems.forEach(function(item) {
             const question = item.querySelector('.faq-question');
             if (question) {
-                // Hapus event listener lama (pakai yang baru)
                 question.removeEventListener('click', toggleFaq);
                 question.addEventListener('click', toggleFaq);
                 
@@ -103,7 +198,6 @@ document.addEventListener('DOMContentLoaded', function() {
     const bookingForm = document.getElementById('bookingForm');
     const formMessage = document.getElementById('formMessage');
     
-    // Set minimal tanggal (H+1)
     const today = new Date();
     const tomorrow = new Date(today);
     tomorrow.setDate(today.getDate() + 1);
@@ -146,7 +240,6 @@ document.addEventListener('DOMContentLoaded', function() {
                 formMessage.style.color = 'blue';
             }
             
-            // Simulasi kirim
             setTimeout(function() {
                 if (formMessage) {
                     formMessage.innerHTML = '✅ Pesanan terkirim! Admin akan hubungi via WhatsApp dalam 15 menit.';
@@ -168,6 +261,51 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         });
     }
+    
+    // ========== KECAMATAN TABS & KELURAHAN PANELS (HALAMAN TENTANG) ==========
+    const kecamatanTabs = document.querySelectorAll('.kecamatan-tab');
+    const kelurahanPanels = document.querySelectorAll('.kelurahan-panel');
+    
+    if (kecamatanTabs.length > 0 && kelurahanPanels.length > 0) {
+        function switchKecamatanTab(kecamatanId) {
+            kecamatanTabs.forEach(function(tab) {
+                if (tab.getAttribute('data-kecamatan') === kecamatanId) {
+                    tab.classList.add('active');
+                } else {
+                    tab.classList.remove('active');
+                }
+            });
+            
+            kelurahanPanels.forEach(function(panel) {
+                if (panel.getAttribute('data-panel') === kecamatanId) {
+                    panel.classList.add('active-panel');
+                } else {
+                    panel.classList.remove('active-panel');
+                }
+            });
+        }
+        
+        kecamatanTabs.forEach(function(tab) {
+            tab.addEventListener('click', function() {
+                const kecamatan = this.getAttribute('data-kecamatan');
+                switchKecamatanTab(kecamatan);
+                console.log('Kecamatan tab clicked:', kecamatan);
+            });
+        });
+        
+        console.log('Kecamatan tabs initialized');
+    }
+    
+    // ========== KELURAHAN CLICK (HALAMAN TENTANG) ==========
+    const kelurahanItems = document.querySelectorAll('.kelurahan-item');
+    
+    kelurahanItems.forEach(function(item) {
+        item.addEventListener('click', function() {
+            const kelurahanName = this.textContent.trim();
+            console.log('Kelurahan dipilih:', kelurahanName);
+            // Bisa ditambahkan fungsi redirect ke kontak.html jika diperlukan
+        });
+    });
     
     console.log('Main.js - semua event listener terpasang');
 });
