@@ -43,28 +43,13 @@
         <h2 class="section-title">🔧 Daftar Layanan & Harga</h2>
         <p style="text-align: center; margin-bottom: 20px;">✨ Klik card layanan untuk melihat detail harga ✨</p>
         
-        <!-- Filter Kategori dengan GAMBAR (tombol lebih besar) -->
+        <!-- Filter Kategori -->
         <div class="filter-buttons">
-            <button class="filter-btn active" data-filter="all">
-                <img src="assets/layanan1.jpeg" alt="Semua" onerror="this.src='https://placehold.co/80x80?text=📋'">
-                <span>Semua</span>
-            </button>
-            <button class="filter-btn" data-filter="cuci">
-                <img src="assets/layanan2.jpeg" alt="Cuci AC" onerror="this.src='https://placehold.co/80x80?text=🧼'">
-                <span>Cuci AC</span>
-            </button>
-            <button class="filter-btn" data-filter="freon">
-                <img src="assets/logo.jpeg" alt="Freon" onerror="this.src='https://placehold.co/80x80?text=❄️'">
-                <span>Freon</span>
-            </button>
-            <button class="filter-btn" data-filter="bongkar">
-                <img src="assets/logo.jpeg" alt="Bongkar/Pasang" onerror="this.src='https://placehold.co/80x80?text=🔧'">
-                <span>Bongkar/Pasang</span>
-            </button>
-            <button class="filter-btn" data-filter="perbaikan">
-                <img src="assets/logo.jpeg" alt="Perbaikan" onerror="this.src='https://placehold.co/80x80?text=⚙️'">
-                <span>Perbaikan</span>
-            </button>
+            <button class="filter-btn active" data-filter="all">📋 Semua</button>
+            <button class="filter-btn" data-filter="cuci">🧼 Cuci AC</button>
+            <button class="filter-btn" data-filter="freon">❄️ Freon</button>
+            <button class="filter-btn" data-filter="bongkar">🔧 Bongkar/Pasang</button>
+            <button class="filter-btn" data-filter="perbaikan">⚙️ Perbaikan</button>
         </div>
         
         <div class="grid-3" id="servicesList">
@@ -102,7 +87,7 @@
 </footer>
 
 <script>
-    // Data layanan lengkap (26 Layanan) - TIDAK DIUBAH
+    // Data layanan lengkap (26 Layanan)
     const services = [
         // ========== CUCI AC (6 Layanan) ==========
         { name: "Cuci AC Split 0.5 - 1 PK", price: "Rp 85.000", priceNumber: 85000, category: "cuci", icon: "fa-snowplow", emoji: "🧼", description: "Layanan cuci AC untuk AC Split ukuran 0.5 PK hingga 1 PK. Meliputi pembongkaran, pencucian indoor & outdoor, hingga pemasangan kembali. Termasuk pengecekan kelistrikan." },

@@ -731,30 +731,183 @@ body {
     margin-top: 8px;
 }
 
-/* ========== FILTER BUTTONS ========== */
+/* ========== FILTER BUTTONS (DENGAN GAMBAR - FLEXBOX FULL) ========== */
+/* ========== FILTER BUTTONS - LAYOUT 3 ATAS, 2 BAWAH CENTER ========== */
 .filter-buttons {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 12px;
-    margin-bottom: 40px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    max-width: 1000px;
+    margin: 0 auto 50px auto;
+    padding: 0 20px;
+}
+
+/* Tombol ke-4 (Bongkar/Pasang) - Pindah ke baris 2, ukuran SAMA */
+.filter-btn:nth-child(4) {
+    grid-column: 1 / 2;
+    grid-row: 2;
+    width: 100%;
+    justify-self: end;
+}
+
+/* Tombol ke-5 (Perbaikan) - Pindah ke baris 2, ukuran SAMA */
+.filter-btn:nth-child(5) {
+    grid-column: 3 / 4;
+    grid-row: 2;
+    width: 100%;
+    justify-self: start;
+}
+
+/* Tombol ke-1,2,3 tetap di baris 1 */
+.filter-btn:nth-child(1),
+.filter-btn:nth-child(2),
+.filter-btn:nth-child(3) {
+    grid-row: 1;
 }
 
 .filter-btn {
-    background: #e2e8f0;
-    border: none;
-    padding: 8px 20px;
-    border-radius: 30px;
-    font-family: 'Poppins', sans-serif;
-    font-weight: 500;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    background: var(--white);
+    border: 3px solid #e2e8f0;
+    border-radius: 32px;
     cursor: pointer;
-    transition: all 0.3s;
+    padding: 15px;
+    transition: all 0.3s ease;
+    width: 100%;
+    font-family: 'Poppins', sans-serif;
+    background-color: white;
 }
 
-.filter-btn.active,
-.filter-btn:hover {
-    background: var(--secondary);
-    color: var(--white);
+/* ========== GAMBAR FULL BESAR - MEMENUHI KOTAK ========== */
+.filter-btn img {
+    width: 100% !important;
+    height: auto !important;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    border-radius: 24px;
+    display: block;
+}
+
+.filter-btn span {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--text-dark);
+}
+
+.filter-btn.active {
+    border-color: var(--secondary);
+    background: #e6f7ff;
+    transform: translateY(-5px);
+    box-shadow: 0 12px 25px rgba(2,132,199,0.3);
+}
+
+.filter-btn.active span {
+    color: var(--secondary);
+}
+
+.filter-btn:hover:not(.active) {
+    border-color: var(--secondary);
+    background: #f8fafc;
+    transform: translateY(-3px);
+}
+
+/* ========== RESPONSIVE TABLET ========== */
+@media (max-width: 850px) {
+    .filter-buttons {
+        gap: 20px;
+        max-width: 700px;
+    }
+    
+    .filter-btn {
+        padding: 12px;
+        gap: 10px;
+    }
+    
+    .filter-btn span {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 650px) {
+    .filter-buttons {
+        gap: 15px;
+        max-width: 550px;
+    }
+    
+    .filter-btn {
+        padding: 10px;
+        gap: 10px;
+    }
+    
+    .filter-btn span {
+        font-size: 0.85rem;
+    }
+}
+
+/* ========== RESPONSIVE MOBILE (1 KOLOM) ========== */
+@media (max-width: 550px) {
+    .filter-buttons {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        max-width: 100%;
+        padding: 0 20px;
+    }
+    
+    /* Reset semua posisi grid di mobile */
+    .filter-btn:nth-child(1),
+    .filter-btn:nth-child(2),
+    .filter-btn:nth-child(3),
+    .filter-btn:nth-child(4),
+    .filter-btn:nth-child(5) {
+        grid-column: auto;
+        grid-row: auto;
+        width: 100%;
+        justify-self: auto;
+    }
+    
+    .filter-btn {
+        flex-direction: column;
+        padding: 20px;
+        gap: 15px;
+        border-radius: 28px;
+    }
+    
+    .filter-btn img {
+        width: 100% !important;
+        max-width: 100%;
+        height: auto !important;
+        aspect-ratio: 1 / 1;
+        object-fit: cover;
+        border-radius: 20px;
+    }
+    
+    .filter-btn span {
+        font-size: 1.1rem;
+        font-weight: 600;
+        text-align: center;
+    }
+}
+
+/* ========== RESPONSIVE MOBILE KECIL ========== */
+@media (max-width: 400px) {
+    .filter-buttons {
+        padding: 0 15px;
+        gap: 15px;
+    }
+    
+    .filter-btn {
+        padding: 15px;
+        gap: 12px;
+    }
+    
+    .filter-btn span {
+        font-size: 1rem;
+    }
 }
 
 /* ========== PRICE MODAL ========== */
@@ -889,6 +1042,22 @@ html { scroll-behavior: smooth; }
     .kecamatan-header { justify-content: center; }
     .kecamatan-header h4 { font-size: 1rem; }
     .kecamatan-header i { font-size: 1.4rem; }
+    
+    /* Responsive filter button gambar */
+    .filter-btn {
+        padding: 10px 14px;
+        min-width: 85px;
+    }
+    .filter-btn img {
+        width: 50px;
+        height: 50px;
+    }
+    .filter-btn span {
+        font-size: 0.75rem;
+    }
+    .filter-buttons {
+        gap: 12px;
+    }
 }
 
 @media (max-width: 600px) {
@@ -904,4 +1073,20 @@ html { scroll-behavior: smooth; }
     .price-modal-icon { font-size: 3rem; }
     .kelurahan-grid { grid-template-columns: 1fr 1fr; }
     .kecamatan-tab { padding: 6px 12px; font-size: 0.7rem; }
+    
+    /* Responsive filter button gambar - mobile kecil */
+    .filter-btn {
+        padding: 8px 12px;
+        min-width: 70px;
+    }
+    .filter-btn img {
+        width: 40px;
+        height: 40px;
+    }
+    .filter-btn span {
+        font-size: 0.65rem;
+    }
+    .filter-buttons {
+        gap: 8px;
+    }
 }
