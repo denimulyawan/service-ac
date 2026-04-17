@@ -13,7 +13,503 @@
     
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <link rel="stylesheet" href="css/style.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: #f0f4f8;
+            color: #1a2a3a;
+            line-height: 1.6;
+        }
+
+        :root {
+            --primary: #0a5c8e;
+            --secondary: #e67e22;
+            --accent: #f39c12;
+            --light: #ecf0f1;
+            --dark: #2c3e50;
+            --gray: #7f8c8d;
+            --success: #27ae60;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Navbar */
+        .navbar {
+            background: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.3rem;
+            color: var(--primary);
+        }
+
+        .logo img {
+            height: 45px;
+            border-radius: 10px;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 25px;
+        }
+
+        .nav-menu a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-menu a:hover, .nav-menu a.active {
+            color: var(--secondary);
+        }
+
+        .menu-toggle {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        @media (max-width: 768px) {
+            .menu-toggle {
+                display: block;
+            }
+            .nav-menu {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 75px;
+                left: 0;
+                right: 0;
+                background: white;
+                padding: 20px;
+                box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+                gap: 15px;
+            }
+            .nav-menu.active {
+                display: flex;
+            }
+        }
+
+        /* Hero Content */
+        .hero-content-section {
+            background: linear-gradient(135deg, #0a5c8e 0%, #1a7fb0 100%);
+            color: white;
+            padding: 60px 0;
+            text-align: center;
+        }
+
+        .hero-badge {
+            background: rgba(255,255,255,0.2);
+            display: inline-block;
+            padding: 8px 20px;
+            border-radius: 30px;
+            font-size: 0.85rem;
+            margin-bottom: 20px;
+        }
+
+        .hero-content h1 {
+            font-size: 3rem;
+            margin-bottom: 10px;
+        }
+
+        .hero-tagline {
+            font-size: 1.3rem;
+            opacity: 0.95;
+            margin-bottom: 20px;
+        }
+
+        .hero-features {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            margin: 20px 0;
+            list-style: none;
+        }
+
+        .hero-features li {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .hero-features i {
+            color: var(--accent);
+        }
+
+        .btn-group-hero {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            margin-top: 25px;
+            flex-wrap: wrap;
+        }
+
+        .btn-wa-hero {
+            background: #25D366;
+            color: white;
+            padding: 12px 28px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: transform 0.3s;
+        }
+
+        .btn-wa-hero:hover {
+            transform: scale(1.05);
+        }
+
+        .btn-outline-hero {
+            background: transparent;
+            border: 2px solid white;
+            color: white;
+            padding: 12px 28px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .btn-outline-hero:hover {
+            background: white;
+            color: var(--primary);
+        }
+
+        /* Slider */
+        .hero-slider-full {
+            padding: 40px 0;
+            background: #f8fafc;
+        }
+
+        .slider-container-full {
+            position: relative;
+            max-width: 1000px;
+            margin: 0 auto;
+            overflow: hidden;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .slider-wrapper-full {
+            overflow: hidden;
+        }
+
+        .slides-full {
+            display: flex;
+            transition: transform 0.5s ease;
+        }
+
+        .slide-full {
+            min-width: 100%;
+        }
+
+        .slide-full img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+        }
+
+        .slider-btn-full {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(0,0,0,0.5);
+            color: white;
+            border: none;
+            padding: 12px 18px;
+            cursor: pointer;
+            border-radius: 50%;
+            font-size: 1.2rem;
+            transition: background 0.3s;
+        }
+
+        .slider-btn-full:hover {
+            background: rgba(0,0,0,0.8);
+        }
+
+        .btn-prev-full {
+            left: 15px;
+        }
+
+        .btn-next-full {
+            right: 15px;
+        }
+
+        .dots-full {
+            text-align: center;
+            padding: 15px 0;
+        }
+
+        .dot {
+            display: inline-block;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: #bbb;
+            margin: 0 5px;
+            cursor: pointer;
+        }
+
+        .dot.active {
+            background: var(--secondary);
+        }
+
+        /* Sections */
+        .section {
+            padding: 60px 0;
+        }
+
+        .bg-light {
+            background: #eef2f7;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 40px;
+            color: var(--primary);
+        }
+
+        /* Grid Layanan Unggulan dengan FOTO */
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .service-feature-card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            transition: transform 0.3s, box-shadow 0.3s;
+            text-align: center;
+        }
+
+        .service-feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+        }
+
+        .service-img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .service-feature-card i {
+            font-size: 2.5rem;
+            color: var(--secondary);
+            margin: 20px 0 10px;
+        }
+
+        .service-feature-card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 8px;
+        }
+
+        .service-feature-card .price {
+            color: var(--accent);
+            font-weight: 700;
+            font-size: 1.3rem;
+            margin: 10px 0;
+        }
+
+        .service-feature-card p {
+            padding: 0 20px 20px;
+            color: var(--gray);
+        }
+
+        .btn, .btn-secondary, .btn-primary, .btn-wa {
+            display: inline-block;
+            padding: 12px 24px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .btn-primary {
+            background: var(--primary);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: #084c74;
+        }
+
+        .btn-secondary {
+            background: var(--secondary);
+            color: white;
+        }
+
+        .btn-secondary:hover {
+            background: #d35400;
+        }
+
+        .btn-wa {
+            background: #25D366;
+            color: white;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        .mt-20 {
+            margin-top: 20px;
+        }
+
+        /* Poin Penting */
+        .poin-penting {
+            background: linear-gradient(135deg, #1a7fb0 0%, #0a5c8e 100%);
+            color: white;
+            border-radius: 20px;
+            padding: 30px;
+            margin: 30px 0;
+        }
+
+        .poin-penting h3 {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .poin-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .poin-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            background: rgba(255,255,255,0.15);
+            padding: 12px 18px;
+            border-radius: 12px;
+        }
+
+        .poin-item i {
+            font-size: 1.5rem;
+            color: var(--accent);
+        }
+
+        /* Card biasa */
+        .card {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        /* Kecamatan Tabs */
+        .kecamatan-tabs {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 25px;
+        }
+
+        .kecamatan-tab {
+            background: var(--light);
+            border: none;
+            padding: 10px 20px;
+            border-radius: 30px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .kecamatan-tab.active {
+            background: var(--secondary);
+            color: white;
+        }
+
+        .kelurahan-panel {
+            display: none;
+        }
+
+        .kelurahan-panel.active-panel {
+            display: block;
+        }
+
+        .kelurahan-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            gap: 12px;
+            margin-top: 15px;
+        }
+
+        .kelurahan-item {
+            background: #f8f9fa;
+            padding: 8px 12px;
+            border-radius: 8px;
+            font-size: 0.9rem;
+        }
+
+        .footer {
+            background: var(--dark);
+            color: white;
+            text-align: center;
+            padding: 30px;
+            margin-top: 40px;
+        }
+
+        .footer a {
+            color: var(--accent);
+            margin: 0 8px;
+            font-size: 1.2rem;
+        }
+
+        @media (max-width: 768px) {
+            .hero-content h1 {
+                font-size: 2rem;
+            }
+            .slide-full img {
+                height: 250px;
+            }
+        }
+    </style>
 </head>
 <body>
 
@@ -38,8 +534,7 @@
     </div>
 </nav>
 
-
-<!-- KONTEN UTAMA (TEKS DAN LAYANAN) -->
+<!-- HERO CONTENT -->
 <section class="hero-content-section">
     <div class="container">
         <div class="hero-content">
@@ -66,6 +561,7 @@
     </div>
 </section>
 
+<!-- SLIDER GAMBAR -->
 <section class="hero-slider-full">
     <div class="slider-container-full">
         <div class="slider-wrapper-full">
@@ -90,25 +586,31 @@
     </div>
 </section>
 
-<!-- LAYANAN UNGGULAN -->
+<!-- LAYANAN UNGGULAN DENGAN FOTO -->
 <section class="section">
     <div class="container">
         <h2 class="section-title">🔧 Layanan Unggulan</h2>
         <div class="grid-3">
-            <div class="card text-center">
+            <div class="service-feature-card">
+                <img src="assets/logo.jpeg" alt="Cuci AC" class="service-img" onerror="this.src='https://placehold.co/600x400?text=Cuci+AC'">
                 <i class="fas fa-snowplow"></i>
                 <h3>Cuci AC</h3>
-                <p>Mulai Rp 85.000</p>
+                <div class="price">Mulai Rp 85.000</div>
+                <p>Pembersihan menyeluruh indoor & outdoor, meningkatkan performa AC, hemat listrik, dan udara lebih sehat.</p>
             </div>
-            <div class="card text-center">
+            <div class="service-feature-card">
+                <img src="assets/logo.jpeg" alt="Isi Freon" class="service-img" onerror="this.src='https://placehold.co/600x400?text=Isi+Freon'">
                 <i class="fas fa-wind"></i>
                 <h3>Isi Freon</h3>
-                <p>Mulai Rp 250.000</p>
+                <div class="price">Mulai Rp 250.000</div>
+                <p>Pengisian freon R32/R410a/R22, pengecekan tekanan, dan kebocoran sistem. AC cepat dingin kembali.</p>
             </div>
-            <div class="card text-center">
+            <div class="service-feature-card">
+                <img src="assets/logo.jpeg" alt="Bongkar Pasang" class="service-img" onerror="this.src='https://placehold.co/600x400?text=Bongkar+Pasang'">
                 <i class="fas fa-tools"></i>
                 <h3>Bongkar Pasang</h3>
-                <p>Rp 450.000</p>
+                <div class="price">Mulai Rp 450.000</div>
+                <p>Pindahan rumah atau kantor? Kami bongkar, pindah, dan pasang kembali dengan rapi & aman.</p>
             </div>
         </div>
         <div class="text-center mt-20">
@@ -117,23 +619,40 @@
     </div>
 </section>
 
-<!-- KEUNGGULAN KAMI -->
+<!-- POIN PENTING LAYANAN -->
 <section class="section bg-light">
+    <div class="container">
+        <div class="poin-penting">
+            <h3><i class="fas fa-star-of-life"></i> Kenapa Harus PW TEHNIK?</h3>
+            <div class="poin-grid">
+                <div class="poin-item"><i class="fas fa-bolt"></i> <span>Respon Cepat < 15 menit</span></div>
+                <div class="poin-item"><i class="fas fa-certificate"></i> <span>Teknisi Bersertifikat</span></div>
+                <div class="poin-item"><i class="fas fa-shield-alt"></i> <span>Garansi 7 Hari</span></div>
+                <div class="poin-item"><i class="fas fa-hand-holding-usd"></i> <span>Harga Transparan</span></div>
+                <div class="poin-item"><i class="fas fa-clock"></i> <span>Service Tepat Waktu</span></div>
+                <div class="poin-item"><i class="fas fa-tools"></i> <span>Peralatan Modern</span></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- KEUNGGULAN KAMI -->
+<section class="section">
     <div class="container">
         <h2 class="section-title">⭐ Yang Kami Tawarkan</h2>
         <div class="grid-3">
             <div class="card text-center">
-                <i class="fas fa-clock"></i>
+                <i class="fas fa-clock" style="font-size: 2rem; color: var(--secondary);"></i>
                 <h3>Respon Cepat</h3>
                 <p>Konfirmasi dalam 15 menit</p>
             </div>
             <div class="card text-center">
-                <i class="fas fa-certificate"></i>
+                <i class="fas fa-certificate" style="font-size: 2rem; color: var(--secondary);"></i>
                 <h3>Teknisi Bersertifikat</h3>
                 <p>Berpengalaman dan profesional</p>
             </div>
             <div class="card text-center">
-                <i class="fas fa-shield-alt"></i>
+                <i class="fas fa-shield-alt" style="font-size: 2rem; color: var(--secondary);"></i>
                 <h3>Garansi 7 Hari</h3>
                 <p>Jaminan kepuasan pelanggan</p>
             </div>
@@ -141,14 +660,13 @@
     </div>
 </section>
 
-<!-- ========== AREA JANGKAUAN (DIPINDAH DARI TENTANG.HTML) ========== -->
-<section class="section">
+<!-- AREA JANGKAUAN -->
+<section class="section bg-light">
     <div class="container">
         <div class="card">
             <h3 style="margin-bottom: 15px;">📍 Area Jangkauan Kami</h3>
             <p>Kami melayani seluruh wilayah Kota Bogor dan Kabupaten Bogor. Klik kecamatan di bawah untuk melihat kelurahan/desa:</p>
             
-            <!-- Tabs Kecamatan -->
             <div class="kecamatan-tabs" id="kecamatanTabs">
                 <button class="kecamatan-tab active" data-kecamatan="selatan">🌿 Bogor Selatan</button>
                 <button class="kecamatan-tab" data-kecamatan="utara">⬆️ Bogor Utara</button>
@@ -158,145 +676,37 @@
                 <button class="kecamatan-tab" data-kecamatan="kabupaten">🏞️ Kabupaten Bogor</button>
             </div>
             
-            <!-- Panel Kelurahan per Kecamatan -->
             <div id="kelurahanPanels">
-                
-                <!-- BOGOR SELATAN -->
                 <div class="kelurahan-panel active-panel" data-panel="selatan">
-                    <div class="kecamatan-header">
-                        <i class="fas fa-tree"></i>
-                        <h4>Kelurahan Bogor Selatan</h4>
-                    </div>
-                    <div class="kelurahan-grid">
-                        <div class="kelurahan-item"><i class="fas fa-location-dot"></i> Batutulis</div>
-                        <div class="kelurahan-item"><i class="fas fa-location-dot"></i> Bojongkerta</div>
-                        <div class="kelurahan-item"><i class="fas fa-location-dot"></i> Bondongan</div>
-                        <div class="kelurahan-item"><i class="fas fa-location-dot"></i> Cikaret</div>
-                        <div class="kelurahan-item"><i class="fas fa-location-dot"></i> Ciapus</div>
-                        <div class="kelurahan-item"><i class="fas fa-location-dot"></i> Cipaku</div>
-                        <div class="kelurahan-item"><i class="fas fa-location-dot"></i> Empang</div>
-                        <div class="kelurahan-item"><i class="fas fa-location-dot"></i> Harjasari</div>
-                        <div class="kelurahan-item"><i class="fas fa-location-dot"></i> Pakuan Hills</div>
-                        <div class="kelurahan-item"><i class="fas fa-location-dot"></i> Pamoyanan</div>
-                        <div class="kelurahan-item"><i class="fas fa-location-dot"></i> Rancamaya</div>
-                        <div class="kelurahan-item"><i class="fas fa-location-dot"></i> Ranggamekar</div>
-                        <div class="kelurahan-item"><i class="fas fa-location-dot"></i> BNR</div>
-                    </div>
+                    <div class="kecamatan-header"><i class="fas fa-tree"></i><h4>Kelurahan Bogor Selatan</h4></div>
+                    <div class="kelurahan-grid"><div class="kelurahan-item">Batutulis</div><div class="kelurahan-item">Bojongkerta</div><div class="kelurahan-item">Bondongan</div><div class="kelurahan-item">Cikaret</div><div class="kelurahan-item">Ciapus</div><div class="kelurahan-item">Cipaku</div><div class="kelurahan-item">Empang</div><div class="kelurahan-item">Harjasari</div><div class="kelurahan-item">Pakuan Hills</div><div class="kelurahan-item">Pamoyanan</div><div class="kelurahan-item">Rancamaya</div><div class="kelurahan-item">Ranggamekar</div></div>
                 </div>
-                
-                <!-- BOGOR UTARA -->
                 <div class="kelurahan-panel" data-panel="utara">
-                    <div class="kecamatan-header">
-                        <i class="fas fa-mountain"></i>
-                        <h4>Kelurahan Bogor Utara</h4>
-                    </div>
-                    <div class="kelurahan-grid">
-                        <div class="kelurahan-item"><i class="fas fa-location-dot"></i> Bantarjati</div>
-                        <div class="kelurahan-item"><i class="fas fa-location-dot"></i> Cibuluh</div>
-                        <div class="kelurahan-item"><i class="fas fa-location-dot"></i> Ciluar</div>
-                        <div class="kelurahan-item"><i class="fas fa-location-dot"></i> Tanah Baru</div>
-                        <div class="kelurahan-item"><i class="fas fa-location-dot"></i> Bangbarung</div>
-                        <div class="kelurahan-item"><i class="fas fa-location-dot"></i> Baranangsiang</div>
-                        <div class="kelurahan-item"><i class="fas fa-location-dot"></i> Katulampa</div>
-                        <div class="kelurahan-item"><i class="fas fa-location-dot"></i> Sindangrasa</div>
-                        <div class="kelurahan-item"><i class="fas fa-location-dot"></i> Sindangsari</div>
-                        <div class="kelurahan-item"><i class="fas fa-location-dot"></i> Sukasari</div>
-                        <div class="kelurahan-item"><i class="fas fa-location-dot"></i> Tajur</div>
-                    </div>
+                    <div class="kecamatan-header"><i class="fas fa-mountain"></i><h4>Kelurahan Bogor Utara</h4></div>
+                    <div class="kelurahan-grid"><div class="kelurahan-item">Bantarjati</div><div class="kelurahan-item">Cibuluh</div><div class="kelurahan-item">Ciluar</div><div class="kelurahan-item">Tanah Baru</div><div class="kelurahan-item">Bangbarung</div><div class="kelurahan-item">Baranangsiang</div><div class="kelurahan-item">Katulampa</div><div class="kelurahan-item">Sindangrasa</div><div class="kelurahan-item">Sindangsari</div><div class="kelurahan-item">Sukasari</div><div class="kelurahan-item">Tajur</div></div>
                 </div>
-                
-                <!-- BOGOR BARAT -->
                 <div class="kelurahan-panel" data-panel="barat">
-                    <div class="kecamatan-header">
-                        <i class="fas fa-water"></i>
-                        <h4>Kelurahan Bogor Barat</h4>
-                    </div>
-                    <div class="kelurahan-grid">
-                        <div class="kelurahan-item"><i class="fas fa-location-dot"></i> Loji</div>
-                        <div class="kelurahan-item"><i class="fas fa-location-dot"></i> Gunung Batu</div>
-                        <div class="kelurahan-item"><i class="fas fa-location-dot"></i> Pasir Jaya</div>
-                        <div class="kelurahan-item"><i class="fas fa-location-dot"></i> Pasir Mulya</div>
-                        <div class="kelurahan-item"><i class="fas fa-location-dot"></i> Sindang Barang</div>
-                        <div class="kelurahan-item"><i class="fas fa-location-dot"></i> Bubulak</div>
-                        <div class="kelurahan-item"><i class="fas fa-location-dot"></i> Cilendek</div>
-                        <div class="kelurahan-item"><i class="fas fa-location-dot"></i> Curug</div>
-                        <div class="kelurahan-item"><i class="fas fa-location-dot"></i> Margajaya</div>
-                        <div class="kelurahan-item"><i class="fas fa-location-dot"></i> Pasir Kuda</div>
-                        <div class="kelurahan-item"><i class="fas fa-location-dot"></i> Semplak</div>
-                        <div class="kelurahan-item"><i class="fas fa-location-dot"></i> Situ Gede</div>
-                    </div>
+                    <div class="kecamatan-header"><i class="fas fa-water"></i><h4>Kelurahan Bogor Barat</h4></div>
+                    <div class="kelurahan-grid"><div class="kelurahan-item">Loji</div><div class="kelurahan-item">Gunung Batu</div><div class="kelurahan-item">Pasir Jaya</div><div class="kelurahan-item">Pasir Mulya</div><div class="kelurahan-item">Sindang Barang</div><div class="kelurahan-item">Bubulak</div><div class="kelurahan-item">Cilendek</div><div class="kelurahan-item">Curug</div><div class="kelurahan-item">Margajaya</div><div class="kelurahan-item">Pasir Kuda</div><div class="kelurahan-item">Semplak</div><div class="kelurahan-item">Situ Gede</div></div>
                 </div>
-                
-                <!-- BOGOR TENGAH -->
                 <div class="kelurahan-panel" data-panel="tengah">
-                    <div class="kecamatan-header">
-                        <i class="fas fa-city"></i>
-                        <h4>Kelurahan Bogor Tengah</h4>
-                    </div>
-                    <div class="kelurahan-grid">
-                        <div class="kelurahan-item"><i class="fas fa-location-dot"></i> Sempur</div>
-                        <div class="kelurahan-item"><i class="fas fa-location-dot"></i> Paledang</div>
-                        <div class="kelurahan-item"><i class="fas fa-location-dot"></i> Ciwaringin</div>
-                        <div class="kelurahan-item"><i class="fas fa-location-dot"></i> Pabaton</div>
-                        <div class="kelurahan-item"><i class="fas fa-location-dot"></i> Babakan</div>
-                        <div class="kelurahan-item"><i class="fas fa-location-dot"></i> Cibogor</div>
-                    </div>
+                    <div class="kecamatan-header"><i class="fas fa-city"></i><h4>Kelurahan Bogor Tengah</h4></div>
+                    <div class="kelurahan-grid"><div class="kelurahan-item">Sempur</div><div class="kelurahan-item">Paledang</div><div class="kelurahan-item">Ciwaringin</div><div class="kelurahan-item">Pabaton</div><div class="kelurahan-item">Babakan</div><div class="kelurahan-item">Cibogor</div></div>
                 </div>
-                
-                <!-- BOGOR TIMUR -->
                 <div class="kelurahan-panel" data-panel="timur">
-                    <div class="kecamatan-header">
-                        <i class="fas fa-church"></i>
-                        <h4>Kelurahan Bogor Timur</h4>
-                    </div>
-                    <div class="kelurahan-grid">
-                        <div class="kelurahan-item"><i class="fas fa-location-dot"></i> Baranangsiang</div>
-                        <div class="kelurahan-item"><i class="fas fa-location-dot"></i> Katulampa</div>
-                        <div class="kelurahan-item"><i class="fas fa-location-dot"></i> Sindangrasa</div>
-                        <div class="kelurahan-item"><i class="fas fa-location-dot"></i> Sindangsari</div>
-                        <div class="kelurahan-item"><i class="fas fa-location-dot"></i> Sukasari</div>
-                        <div class="kelurahan-item"><i class="fas fa-location-dot"></i> Tajur</div>
-                        <div class="kelurahan-item"><i class="fas fa-location-dot"></i> Tanah Sareal</div>
-                    </div>
+                    <div class="kecamatan-header"><i class="fas fa-church"></i><h4>Kelurahan Bogor Timur</h4></div>
+                    <div class="kelurahan-grid"><div class="kelurahan-item">Baranangsiang</div><div class="kelurahan-item">Katulampa</div><div class="kelurahan-item">Sindangrasa</div><div class="kelurahan-item">Sindangsari</div><div class="kelurahan-item">Sukasari</div><div class="kelurahan-item">Tajur</div><div class="kelurahan-item">Tanah Sareal</div></div>
                 </div>
-                
-                <!-- KABUPATEN BOGOR -->
                 <div class="kelurahan-panel" data-panel="kabupaten">
-                    <div class="kecamatan-header">
-                        <i class="fas fa-mountain-sun"></i>
-                        <h4>Wilayah Kabupaten Bogor</h4>
-                    </div>
-                    <div class="kelurahan-grid">
-                        <div class="kelurahan-item"><i class="fas fa-location-dot"></i> Bojong Koneng</div>
-                        <div class="kelurahan-item"><i class="fas fa-location-dot"></i> Bukit Cimanggu</div>
-                        <div class="kelurahan-item"><i class="fas fa-location-dot"></i> Cibinong</div>
-                        <div class="kelurahan-item"><i class="fas fa-location-dot"></i> Ciheleut</div>
-                        <div class="kelurahan-item"><i class="fas fa-location-dot"></i> Cilebut</div>
-                        <div class="kelurahan-item"><i class="fas fa-location-dot"></i> Cimanggu City</div>
-                        <div class="kelurahan-item"><i class="fas fa-location-dot"></i> Citereup</div>
-                        <div class="kelurahan-item"><i class="fas fa-location-dot"></i> Jambu Dua Bogor</div>
-                        <div class="kelurahan-item"><i class="fas fa-location-dot"></i> Kebon Pedes</div>
-                        <div class="kelurahan-item"><i class="fas fa-location-dot"></i> Laladon</div>
-                        <div class="kelurahan-item"><i class="fas fa-location-dot"></i> Bubulak</div>
-                        <div class="kelurahan-item"><i class="fas fa-location-dot"></i> Gadog</div>
-                        <div class="kelurahan-item"><i class="fas fa-location-dot"></i> Cifor</div>
-                        <div class="kelurahan-item"><i class="fas fa-location-dot"></i> Cijunjung</div>
-                        <div class="kelurahan-item"><i class="fas fa-location-dot"></i> Cinangneng</div>
-                        <div class="kelurahan-item"><i class="fas fa-location-dot"></i> Danau Bogor Raya</div>
-                        <div class="kelurahan-item"><i class="fas fa-location-dot"></i> Dramaga</div>
-                        <div class="kelurahan-item"><i class="fas fa-location-dot"></i> Kemang</div>
-                        <div class="kelurahan-item"><i class="fas fa-location-dot"></i> Mancur</div>
-                    </div>
+                    <div class="kecamatan-header"><i class="fas fa-mountain-sun"></i><h4>Wilayah Kabupaten Bogor</h4></div>
+                    <div class="kelurahan-grid"><div class="kelurahan-item">Bojong Koneng</div><div class="kelurahan-item">Bukit Cimanggu</div><div class="kelurahan-item">Cibinong</div><div class="kelurahan-item">Ciheleut</div><div class="kelurahan-item">Cilebut</div><div class="kelurahan-item">Cimanggu City</div><div class="kelurahan-item">Citereup</div><div class="kelurahan-item">Jambu Dua</div><div class="kelurahan-item">Kebon Pedes</div><div class="kelurahan-item">Laladon</div><div class="kelurahan-item">Gadog</div><div class="kelurahan-item">Cifor</div><div class="kelurahan-item">Dramaga</div><div class="kelurahan-item">Kemang</div></div>
                 </div>
-                
             </div>
-            
             <p class="mt-20"><i class="fas fa-map-marker-alt" style="color: var(--accent);"></i> <strong>Di luar area? Hubungi kami untuk info ketersediaan!</strong></p>
         </div>
-        
         <div class="text-center mt-20">
             <a href="kontak.html" class="btn btn-primary">📅 Booking Sekarang</a>
-            <a href="https://wa.me/6281234567890" class="btn btn-wa"><i class="fab fa-whatsapp"></i> Chat WhatsApp</a>
+            <a href="https://wa.me/6281234567890" class="btn btn-wa" style="margin-left: 10px;"><i class="fab fa-whatsapp"></i> Chat WhatsApp</a>
         </div>
     </div>
 </section>
@@ -313,6 +723,89 @@
     </div>
 </footer>
 
-<script src="js/main.js"></script>
+<script>
+    // Mobile menu toggle
+    const menuToggle = document.getElementById('menuToggle');
+    const navMenu = document.getElementById('navMenu');
+    if (menuToggle) {
+        menuToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+        });
+    }
+
+    // Slider
+    const slidesFull = document.getElementById('slidesFull');
+    const prevBtn = document.getElementById('prevBtnFull');
+    const nextBtn = document.getElementById('nextBtnFull');
+    const dotsContainer = document.getElementById('dotsFull');
+    const slides = document.querySelectorAll('.slide-full');
+    let currentIndex = 0;
+    let autoSlideInterval;
+
+    function updateSlider() {
+        slidesFull.style.transform = `translateX(-${currentIndex * 100}%)`;
+        document.querySelectorAll('.dot').forEach((dot, i) => {
+            dot.classList.toggle('active', i === currentIndex);
+        });
+    }
+
+    function createDots() {
+        dotsContainer.innerHTML = '';
+        slides.forEach((_, i) => {
+            const dot = document.createElement('div');
+            dot.classList.add('dot');
+            if (i === currentIndex) dot.classList.add('active');
+            dot.addEventListener('click', () => {
+                currentIndex = i;
+                updateSlider();
+                resetAutoSlide();
+            });
+            dotsContainer.appendChild(dot);
+        });
+    }
+
+    function nextSlide() {
+        currentIndex = (currentIndex + 1) % slides.length;
+        updateSlider();
+    }
+
+    function prevSlide() {
+        currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+        updateSlider();
+    }
+
+    function startAutoSlide() {
+        autoSlideInterval = setInterval(nextSlide, 4000);
+    }
+
+    function resetAutoSlide() {
+        clearInterval(autoSlideInterval);
+        startAutoSlide();
+    }
+
+    if (slides.length > 0) {
+        createDots();
+        startAutoSlide();
+        prevBtn.addEventListener('click', () => { prevSlide(); resetAutoSlide(); });
+        nextBtn.addEventListener('click', () => { nextSlide(); resetAutoSlide(); });
+    }
+
+    // Kecamatan Tabs
+    const tabs = document.querySelectorAll('.kecamatan-tab');
+    const panels = document.querySelectorAll('.kelurahan-panel');
+    tabs.forEach(tab => {
+        tab.addEventListener('click', () => {
+            const kec = tab.dataset.kecamatan;
+            tabs.forEach(t => t.classList.remove('active'));
+            tab.classList.add('active');
+            panels.forEach(panel => {
+                panel.classList.remove('active-panel');
+                if (panel.dataset.panel === kec) {
+                    panel.classList.add('active-panel');
+                }
+            });
+        });
+    });
+</script>
 </body>
 </html>
