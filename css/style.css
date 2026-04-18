@@ -340,8 +340,8 @@ body {
 /* ========== CARDS ========== */
 .grid-3 {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 25px;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
 }
 
 .grid-4 {
@@ -362,6 +362,177 @@ body {
 .card.text-center { text-align: center; }
 .card i { font-size: 3rem; color: var(--secondary); margin-bottom: 15px; }
 .card h3 { margin-bottom: 10px; }
+
+/* ========== SERVICE CARD with IMAGE (UNTUK INDEX) ========== */
+.service-card {
+    background: var(--white);
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+}
+
+.service-img-wrapper {
+    width: 100%;
+    height: 220px;
+    overflow: hidden;
+}
+
+.service-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.service-card:hover .service-img {
+    transform: scale(1.05);
+}
+
+.service-body {
+    padding: 20px;
+    text-align: center;
+}
+
+.service-icon {
+    font-size: 2.5rem;
+    color: var(--secondary);
+    margin-bottom: 10px;
+}
+
+.service-body h3 {
+    font-size: 1.3rem;
+    margin-bottom: 15px;
+    color: var(--primary);
+}
+
+.service-benefits {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.benefit-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 0.85rem;
+    color: var(--gray);
+    text-align: left;
+    padding: 5px 0;
+    border-bottom: 1px dashed #e2e8f0;
+}
+
+.benefit-item i {
+    font-size: 1rem;
+    color: var(--accent);
+    width: 24px;
+}
+
+/* ========== FEATURE SHOWCASE (KENAPA PILIH KAMI) ========== */
+.feature-showcase {
+    background: linear-gradient(135deg, var(--primary), #2D4A6F);
+    border-radius: 32px;
+    padding: 40px;
+    color: white;
+}
+
+.feature-showcase .section-title {
+    color: white;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin-top: 20px;
+}
+
+.feature-box {
+    text-align: center;
+    padding: 20px;
+    background: rgba(255,255,255,0.1);
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+    transition: transform 0.3s;
+}
+
+.feature-box:hover {
+    transform: translateY(-5px);
+    background: rgba(255,255,255,0.2);
+}
+
+.feature-icon {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+}
+
+.feature-box h4 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+.feature-box p {
+    font-size: 0.85rem;
+    opacity: 0.9;
+}
+
+/* ========== INFO CARD (MANFAAT SERVICE AC) ========== */
+.info-card {
+    background: linear-gradient(135deg, #e8f4f8, #d4eaf0);
+    border-radius: 24px;
+    padding: 30px;
+}
+
+.info-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    margin-bottom: 25px;
+}
+
+.info-header i {
+    font-size: 2rem;
+    color: var(--warning);
+}
+
+.info-header h3 {
+    font-size: 1.4rem;
+    color: var(--primary);
+}
+
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 20px;
+}
+
+.info-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: white;
+    padding: 15px 20px;
+    border-radius: 16px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.info-item i {
+    font-size: 1.5rem;
+    color: var(--accent);
+}
+
+.info-item span {
+    font-size: 0.9rem;
+    color: var(--text-dark);
+}
 
 /* ========== FORM ========== */
 .form-group { margin-bottom: 20px; }
@@ -732,7 +903,6 @@ body {
 }
 
 /* ========== FILTER BUTTONS (DENGAN GAMBAR - FLEXBOX FULL) ========== */
-/* ========== FILTER BUTTONS - LAYOUT 3 ATAS, 2 BAWAH CENTER ========== */
 .filter-buttons {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -742,7 +912,6 @@ body {
     padding: 0 20px;
 }
 
-/* Tombol ke-4 (Bongkar/Pasang) - Pindah ke baris 2, ukuran SAMA */
 .filter-btn:nth-child(4) {
     grid-column: 1 / 2;
     grid-row: 2;
@@ -750,7 +919,6 @@ body {
     justify-self: end;
 }
 
-/* Tombol ke-5 (Perbaikan) - Pindah ke baris 2, ukuran SAMA */
 .filter-btn:nth-child(5) {
     grid-column: 3 / 4;
     grid-row: 2;
@@ -758,7 +926,6 @@ body {
     justify-self: start;
 }
 
-/* Tombol ke-1,2,3 tetap di baris 1 */
 .filter-btn:nth-child(1),
 .filter-btn:nth-child(2),
 .filter-btn:nth-child(3) {
@@ -782,7 +949,6 @@ body {
     background-color: white;
 }
 
-/* ========== GAMBAR FULL BESAR - MEMENUHI KOTAK ========== */
 .filter-btn img {
     width: 100% !important;
     height: auto !important;
@@ -813,101 +979,6 @@ body {
     border-color: var(--secondary);
     background: #f8fafc;
     transform: translateY(-3px);
-}
-
-/* ========== RESPONSIVE TABLET ========== */
-@media (max-width: 850px) {
-    .filter-buttons {
-        gap: 20px;
-        max-width: 700px;
-    }
-    
-    .filter-btn {
-        padding: 12px;
-        gap: 10px;
-    }
-    
-    .filter-btn span {
-        font-size: 0.9rem;
-    }
-}
-
-@media (max-width: 650px) {
-    .filter-buttons {
-        gap: 15px;
-        max-width: 550px;
-    }
-    
-    .filter-btn {
-        padding: 10px;
-        gap: 10px;
-    }
-    
-    .filter-btn span {
-        font-size: 0.85rem;
-    }
-}
-
-/* ========== RESPONSIVE MOBILE (1 KOLOM) ========== */
-@media (max-width: 550px) {
-    .filter-buttons {
-        display: flex;
-        flex-direction: column;
-        gap: 20px;
-        max-width: 100%;
-        padding: 0 20px;
-    }
-    
-    /* Reset semua posisi grid di mobile */
-    .filter-btn:nth-child(1),
-    .filter-btn:nth-child(2),
-    .filter-btn:nth-child(3),
-    .filter-btn:nth-child(4),
-    .filter-btn:nth-child(5) {
-        grid-column: auto;
-        grid-row: auto;
-        width: 100%;
-        justify-self: auto;
-    }
-    
-    .filter-btn {
-        flex-direction: column;
-        padding: 20px;
-        gap: 15px;
-        border-radius: 28px;
-    }
-    
-    .filter-btn img {
-        width: 100% !important;
-        max-width: 100%;
-        height: auto !important;
-        aspect-ratio: 1 / 1;
-        object-fit: cover;
-        border-radius: 20px;
-    }
-    
-    .filter-btn span {
-        font-size: 1.1rem;
-        font-weight: 600;
-        text-align: center;
-    }
-}
-
-/* ========== RESPONSIVE MOBILE KECIL ========== */
-@media (max-width: 400px) {
-    .filter-buttons {
-        padding: 0 15px;
-        gap: 15px;
-    }
-    
-    .filter-btn {
-        padding: 15px;
-        gap: 12px;
-    }
-    
-    .filter-btn span {
-        font-size: 1rem;
-    }
 }
 
 /* ========== PRICE MODAL ========== */
@@ -1043,7 +1114,6 @@ html { scroll-behavior: smooth; }
     .kecamatan-header h4 { font-size: 1rem; }
     .kecamatan-header i { font-size: 1.4rem; }
     
-    /* Responsive filter button gambar */
     .filter-btn {
         padding: 10px 14px;
         min-width: 85px;
@@ -1058,11 +1128,71 @@ html { scroll-behavior: smooth; }
     .filter-buttons {
         gap: 12px;
     }
+    
+    .features-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+    
+    .feature-showcase {
+        padding: 25px;
+    }
+    
+    .info-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .service-img-wrapper {
+        height: 180px;
+    }
 }
 
 @media (max-width: 600px) {
     .service-chip { padding: 8px 14px; font-size: 0.75rem; }
     .service-chip .chip-price { font-size: 0.65rem; padding: 2px 6px; }
+}
+
+@media (max-width: 550px) {
+    .filter-buttons {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        max-width: 100%;
+        padding: 0 20px;
+    }
+    
+    .filter-btn:nth-child(1),
+    .filter-btn:nth-child(2),
+    .filter-btn:nth-child(3),
+    .filter-btn:nth-child(4),
+    .filter-btn:nth-child(5) {
+        grid-column: auto;
+        grid-row: auto;
+        width: 100%;
+        justify-self: auto;
+    }
+    
+    .filter-btn {
+        flex-direction: column;
+        padding: 20px;
+        gap: 15px;
+        border-radius: 28px;
+    }
+    
+    .filter-btn img {
+        width: 100% !important;
+        max-width: 100%;
+        height: auto !important;
+        aspect-ratio: 1 / 1;
+        object-fit: cover;
+        border-radius: 20px;
+    }
+    
+    .filter-btn span {
+        font-size: 1.1rem;
+        font-weight: 600;
+        text-align: center;
+    }
 }
 
 @media (max-width: 480px) {
@@ -1074,7 +1204,6 @@ html { scroll-behavior: smooth; }
     .kelurahan-grid { grid-template-columns: 1fr 1fr; }
     .kecamatan-tab { padding: 6px 12px; font-size: 0.7rem; }
     
-    /* Responsive filter button gambar - mobile kecil */
     .filter-btn {
         padding: 8px 12px;
         min-width: 70px;
@@ -1088,5 +1217,13 @@ html { scroll-behavior: smooth; }
     }
     .filter-buttons {
         gap: 8px;
+    }
+    
+    .benefit-item {
+        font-size: 0.75rem;
+    }
+    
+    .service-body h3 {
+        font-size: 1.1rem;
     }
 }

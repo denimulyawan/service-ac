@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
     <title>PW TEHNIK - Service AC Profesional Kota Bogor</title>
-    <meta name="description" content="Service AC profesional di Kota Bogor. Teknisi berpengalaman, harga terjangkau, garansi 7 hari. Melayani cuci AC, isi freon, bongkar pasang.">
+    <meta name="description" content="Service AC profesional di Kota Bogor. Teknisi berpengalaman, harga terjangkau, Garansi 30 hari. Melayani cuci AC, isi freon, bongkar pasang.">
     <meta name="keywords" content="service AC Bogor, cuci AC Bogor, isi freon Bogor, teknisi AC">
     
     <!-- Favicon -->
@@ -13,503 +13,7 @@
     
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Poppins', sans-serif;
-            background: #f0f4f8;
-            color: #1a2a3a;
-            line-height: 1.6;
-        }
-
-        :root {
-            --primary: #0a5c8e;
-            --secondary: #e67e22;
-            --accent: #f39c12;
-            --light: #ecf0f1;
-            --dark: #2c3e50;
-            --gray: #7f8c8d;
-            --success: #27ae60;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        /* Navbar */
-        .navbar {
-            background: white;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
-
-        .nav-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 15px 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            text-decoration: none;
-            font-weight: 700;
-            font-size: 1.3rem;
-            color: var(--primary);
-        }
-
-        .logo img {
-            height: 45px;
-            border-radius: 10px;
-        }
-
-        .nav-menu {
-            display: flex;
-            list-style: none;
-            gap: 25px;
-        }
-
-        .nav-menu a {
-            text-decoration: none;
-            color: var(--dark);
-            font-weight: 500;
-            transition: color 0.3s;
-        }
-
-        .nav-menu a:hover, .nav-menu a.active {
-            color: var(--secondary);
-        }
-
-        .menu-toggle {
-            display: none;
-            font-size: 1.5rem;
-            cursor: pointer;
-        }
-
-        @media (max-width: 768px) {
-            .menu-toggle {
-                display: block;
-            }
-            .nav-menu {
-                display: none;
-                flex-direction: column;
-                position: absolute;
-                top: 75px;
-                left: 0;
-                right: 0;
-                background: white;
-                padding: 20px;
-                box-shadow: 0 5px 10px rgba(0,0,0,0.1);
-                gap: 15px;
-            }
-            .nav-menu.active {
-                display: flex;
-            }
-        }
-
-        /* Hero Content */
-        .hero-content-section {
-            background: linear-gradient(135deg, #0a5c8e 0%, #1a7fb0 100%);
-            color: white;
-            padding: 60px 0;
-            text-align: center;
-        }
-
-        .hero-badge {
-            background: rgba(255,255,255,0.2);
-            display: inline-block;
-            padding: 8px 20px;
-            border-radius: 30px;
-            font-size: 0.85rem;
-            margin-bottom: 20px;
-        }
-
-        .hero-content h1 {
-            font-size: 3rem;
-            margin-bottom: 10px;
-        }
-
-        .hero-tagline {
-            font-size: 1.3rem;
-            opacity: 0.95;
-            margin-bottom: 20px;
-        }
-
-        .hero-features {
-            display: flex;
-            justify-content: center;
-            gap: 30px;
-            flex-wrap: wrap;
-            margin: 20px 0;
-            list-style: none;
-        }
-
-        .hero-features li {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .hero-features i {
-            color: var(--accent);
-        }
-
-        .btn-group-hero {
-            display: flex;
-            gap: 15px;
-            justify-content: center;
-            margin-top: 25px;
-            flex-wrap: wrap;
-        }
-
-        .btn-wa-hero {
-            background: #25D366;
-            color: white;
-            padding: 12px 28px;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 600;
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            transition: transform 0.3s;
-        }
-
-        .btn-wa-hero:hover {
-            transform: scale(1.05);
-        }
-
-        .btn-outline-hero {
-            background: transparent;
-            border: 2px solid white;
-            color: white;
-            padding: 12px 28px;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: all 0.3s;
-        }
-
-        .btn-outline-hero:hover {
-            background: white;
-            color: var(--primary);
-        }
-
-        /* Slider */
-        .hero-slider-full {
-            padding: 40px 0;
-            background: #f8fafc;
-        }
-
-        .slider-container-full {
-            position: relative;
-            max-width: 1000px;
-            margin: 0 auto;
-            overflow: hidden;
-            border-radius: 20px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-        }
-
-        .slider-wrapper-full {
-            overflow: hidden;
-        }
-
-        .slides-full {
-            display: flex;
-            transition: transform 0.5s ease;
-        }
-
-        .slide-full {
-            min-width: 100%;
-        }
-
-        .slide-full img {
-            width: 100%;
-            height: 400px;
-            object-fit: cover;
-        }
-
-        .slider-btn-full {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            background: rgba(0,0,0,0.5);
-            color: white;
-            border: none;
-            padding: 12px 18px;
-            cursor: pointer;
-            border-radius: 50%;
-            font-size: 1.2rem;
-            transition: background 0.3s;
-        }
-
-        .slider-btn-full:hover {
-            background: rgba(0,0,0,0.8);
-        }
-
-        .btn-prev-full {
-            left: 15px;
-        }
-
-        .btn-next-full {
-            right: 15px;
-        }
-
-        .dots-full {
-            text-align: center;
-            padding: 15px 0;
-        }
-
-        .dot {
-            display: inline-block;
-            width: 12px;
-            height: 12px;
-            border-radius: 50%;
-            background: #bbb;
-            margin: 0 5px;
-            cursor: pointer;
-        }
-
-        .dot.active {
-            background: var(--secondary);
-        }
-
-        /* Sections */
-        .section {
-            padding: 60px 0;
-        }
-
-        .bg-light {
-            background: #eef2f7;
-        }
-
-        .section-title {
-            text-align: center;
-            font-size: 2rem;
-            margin-bottom: 40px;
-            color: var(--primary);
-        }
-
-        /* Grid Layanan Unggulan dengan FOTO */
-        .grid-3 {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-        }
-
-        .service-feature-card {
-            background: white;
-            border-radius: 20px;
-            overflow: hidden;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
-            transition: transform 0.3s, box-shadow 0.3s;
-            text-align: center;
-        }
-
-        .service-feature-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
-        }
-
-        .service-img {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-        }
-
-        .service-feature-card i {
-            font-size: 2.5rem;
-            color: var(--secondary);
-            margin: 20px 0 10px;
-        }
-
-        .service-feature-card h3 {
-            font-size: 1.4rem;
-            margin-bottom: 8px;
-        }
-
-        .service-feature-card .price {
-            color: var(--accent);
-            font-weight: 700;
-            font-size: 1.3rem;
-            margin: 10px 0;
-        }
-
-        .service-feature-card p {
-            padding: 0 20px 20px;
-            color: var(--gray);
-        }
-
-        .btn, .btn-secondary, .btn-primary, .btn-wa {
-            display: inline-block;
-            padding: 12px 24px;
-            border-radius: 30px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: all 0.3s;
-        }
-
-        .btn-primary {
-            background: var(--primary);
-            color: white;
-        }
-
-        .btn-primary:hover {
-            background: #084c74;
-        }
-
-        .btn-secondary {
-            background: var(--secondary);
-            color: white;
-        }
-
-        .btn-secondary:hover {
-            background: #d35400;
-        }
-
-        .btn-wa {
-            background: #25D366;
-            color: white;
-        }
-
-        .text-center {
-            text-align: center;
-        }
-
-        .mt-20 {
-            margin-top: 20px;
-        }
-
-        /* Poin Penting */
-        .poin-penting {
-            background: linear-gradient(135deg, #1a7fb0 0%, #0a5c8e 100%);
-            color: white;
-            border-radius: 20px;
-            padding: 30px;
-            margin: 30px 0;
-        }
-
-        .poin-penting h3 {
-            font-size: 1.5rem;
-            margin-bottom: 20px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .poin-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-        }
-
-        .poin-item {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            background: rgba(255,255,255,0.15);
-            padding: 12px 18px;
-            border-radius: 12px;
-        }
-
-        .poin-item i {
-            font-size: 1.5rem;
-            color: var(--accent);
-        }
-
-        /* Card biasa */
-        .card {
-            background: white;
-            border-radius: 15px;
-            padding: 25px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-        }
-
-        .text-center {
-            text-align: center;
-        }
-
-        /* Kecamatan Tabs */
-        .kecamatan-tabs {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-            margin-bottom: 25px;
-        }
-
-        .kecamatan-tab {
-            background: var(--light);
-            border: none;
-            padding: 10px 20px;
-            border-radius: 30px;
-            cursor: pointer;
-            font-weight: 600;
-            transition: all 0.3s;
-        }
-
-        .kecamatan-tab.active {
-            background: var(--secondary);
-            color: white;
-        }
-
-        .kelurahan-panel {
-            display: none;
-        }
-
-        .kelurahan-panel.active-panel {
-            display: block;
-        }
-
-        .kelurahan-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-            gap: 12px;
-            margin-top: 15px;
-        }
-
-        .kelurahan-item {
-            background: #f8f9fa;
-            padding: 8px 12px;
-            border-radius: 8px;
-            font-size: 0.9rem;
-        }
-
-        .footer {
-            background: var(--dark);
-            color: white;
-            text-align: center;
-            padding: 30px;
-            margin-top: 40px;
-        }
-
-        .footer a {
-            color: var(--accent);
-            margin: 0 8px;
-            font-size: 1.2rem;
-        }
-
-        @media (max-width: 768px) {
-            .hero-content h1 {
-                font-size: 2rem;
-            }
-            .slide-full img {
-                height: 250px;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
@@ -534,7 +38,7 @@
     </div>
 </nav>
 
-<!-- HERO CONTENT -->
+<!-- KONTEN UTAMA (TEKS DAN LAYANAN) -->
 <section class="hero-content-section">
     <div class="container">
         <div class="hero-content">
@@ -561,22 +65,21 @@
     </div>
 </section>
 
-<!-- SLIDER GAMBAR -->
 <section class="hero-slider-full">
     <div class="slider-container-full">
         <div class="slider-wrapper-full">
             <div class="slides-full" id="slidesFull">
                 <div class="slide-full">
-                    <img src="assets/teknisi1.jpeg" alt="Teknisi sedang perbaiki AC">
+                    <img src="assets/service ac bogor landscape 1.jpeg" alt="Teknisi sedang perbaiki AC">
                 </div>
                 <div class="slide-full">
-                    <img src="assets/teknisi2.jpeg" alt="Cuci AC profesional">
+                    <img src="assets/service ac bogor landscape 2.jpeg" alt="Cuci AC profesional">
                 </div>
                 <div class="slide-full">
-                    <img src="assets/teknisi3.jpeg" alt="Isi freon AC">
+                    <img src="assets/service ac bogor landscape 3.jpeg" alt="Isi freon AC">
                 </div>
                 <div class="slide-full">
-                    <img src="assets/teknisi4.jpeg" alt="Bongkar pasang AC">
+                    <img src="assets/service ac bogor landscape 1.jpeg" alt="Bongkar pasang AC">
                 </div>
             </div>
         </div>
@@ -586,87 +89,202 @@
     </div>
 </section>
 
-<!-- LAYANAN UNGGULAN DENGAN FOTO -->
+<!-- LAYANAN UNGGULAN dengan 6 CARD + FOTO & KELEBIHAN -->
 <section class="section">
     <div class="container">
-        <h2 class="section-title">🔧 Layanan Unggulan</h2>
-        <div class="grid-3">
-            <div class="service-feature-card">
-                <img src="assets/logo.jpeg" alt="Cuci AC" class="service-img" onerror="this.src='https://placehold.co/600x400?text=Cuci+AC'">
-                <i class="fas fa-snowplow"></i>
-                <h3>Cuci AC</h3>
-                <div class="price">Mulai Rp 85.000</div>
-                <p>Pembersihan menyeluruh indoor & outdoor, meningkatkan performa AC, hemat listrik, dan udara lebih sehat.</p>
+        <h2 class="section-title">🔧 Layanan Unggulan Kami</h2>
+        
+        <!-- Grid 6 card - rapi 2 atau 3 kolom tergantung layar -->
+        <div class="services-grid-6" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 25px;">
+            
+            <!-- Card 1: Cuci AC Profesional -->
+            <div class="service-card">
+                <div class="service-img-wrapper">
+                    <img src="assets/Service ac bogor 1.jpg" alt="Cuci AC" class="service-img" onerror="this.src='https://placehold.co/600x400/1E3A5F/white?text=Cuci+AC'">
+                </div>
+                <div class="service-body">
+                    <i class="fas fa-snowplow service-icon"></i>
+                    <h3>Cuci AC Profesional</h3>
+                    <div class="service-benefits">
+                        <div class="benefit-item"><i class="fas fa-leaf"></i><span>Menghilangkan debu & jamur penyebab alergi</span></div>
+                        <div class="benefit-item"><i class="fas fa-bolt"></i><span>Meningkatkan efisiensi listrik hingga 30%</span></div>
+                        <div class="benefit-item"><i class="fas fa-thermometer-half"></i><span>Mempercepat pendinginan ruangan</span></div>
+                        <div class="benefit-item"><i class="fas fa-wind"></i><span>Udara lebih segar & sehat</span></div>
+                    </div>
+                </div>
             </div>
-            <div class="service-feature-card">
-                <img src="assets/logo.jpeg" alt="Isi Freon" class="service-img" onerror="this.src='https://placehold.co/600x400?text=Isi+Freon'">
-                <i class="fas fa-wind"></i>
-                <h3>Isi Freon</h3>
-                <div class="price">Mulai Rp 250.000</div>
-                <p>Pengisian freon R32/R410a/R22, pengecekan tekanan, dan kebocoran sistem. AC cepat dingin kembali.</p>
+
+            <!-- Card 2: Isi & Tambah Freon -->
+            <div class="service-card">
+                <div class="service-img-wrapper">
+                    <img src="assets/Service ac bogor 2.jpg" alt="Isi Freon" class="service-img" onerror="this.src='https://placehold.co/600x400/1E3A5F/white?text=Isi+Freon'">
+                </div>
+                <div class="service-body">
+                    <i class="fas fa-wind service-icon"></i>
+                    <h3>Isi & Tambah Freon</h3>
+                    <div class="service-benefits">
+                        <div class="benefit-item"><i class="fas fa-snowflake"></i><span>AC kembali dingin maksimal</span></div>
+                        <div class="benefit-item"><i class="fas fa-search"></i><span>Cek kebocoran sistem menyeluruh</span></div>
+                        <div class="benefit-item"><i class="fas fa-chart-line"></i><span>Tekanan freon sesuai standar pabrik</span></div>
+                        <div class="benefit-item"><i class="fas fa-microchip"></i><span>Support R32, R410a, R22</span></div>
+                    </div>
+                </div>
             </div>
-            <div class="service-feature-card">
-                <img src="assets/logo.jpeg" alt="Bongkar Pasang" class="service-img" onerror="this.src='https://placehold.co/600x400?text=Bongkar+Pasang'">
-                <i class="fas fa-tools"></i>
-                <h3>Bongkar Pasang</h3>
-                <div class="price">Mulai Rp 450.000</div>
-                <p>Pindahan rumah atau kantor? Kami bongkar, pindah, dan pasang kembali dengan rapi & aman.</p>
+
+            <!-- Card 3: Bongkar Pasang AC -->
+            <div class="service-card">
+                <div class="service-img-wrapper">
+                    <img src="assets/Service ac bogor 3.jpg" alt="Bongkar Pasang" class="service-img" onerror="this.src='https://placehold.co/600x400/1E3A5F/white?text=Bongkar+Pasang'">
+                </div>
+                <div class="service-body">
+                    <i class="fas fa-tools service-icon"></i>
+                    <h3>Bongkar Pasang AC</h3>
+                    <div class="service-benefits">
+                        <div class="benefit-item"><i class="fas fa-home"></i><span>Solusi pindahan rumah / kantor</span></div>
+                        <div class="benefit-item"><i class="fas fa-shield-alt"></i><span>Pemasangan rapi & anti bocor</span></div>
+                        <div class="benefit-item"><i class="fas fa-clock"></i><span>Pengerjaan cepat & tepat waktu</span></div>
+                        <div class="benefit-item"><i class="fas fa-hand-sparkles"></i><span>Termasuk pengecekan & perapihan kabel</span></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 4: Perbaikan Kebocoran -->
+            <div class="service-card">
+                <div class="service-img-wrapper">
+                    <img src="assets/service ac bogor landscape 2.jpeg" alt="Perbaikan Bocor" class="service-img" onerror="this.src='https://placehold.co/600x400/1E3A5F/white?text=Perbaikan+Kebocoran'">
+                </div>
+                <div class="service-body">
+                    <i class="fas fa-wrench service-icon"></i>
+                    <h3>Perbaikan Kebocoran</h3>
+                    <div class="service-benefits">
+                        <div class="benefit-item"><i class="fas fa-search"></i><span>Deteksi kebocoran dengan alat modern</span></div>
+                        <div class="benefit-item"><i class="fas fa-fire"></i><span>Pengelasan pipa anti bocor</span></div>
+                        <div class="benefit-item"><i class="fas fa-check-double"></i><span>Garansi 30 hari untuk hasil kerja</span></div>
+                        <div class="benefit-item"><i class="fas fa-charging-station"></i><span>Cegah pemborosan listrik</span></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 5: Repair Modul / PCB -->
+            <div class="service-card">
+                <div class="service-img-wrapper">
+                    <img src="assets/Service ac bogor 5.jpg" alt="Repair Modul" class="service-img" onerror="this.src='https://placehold.co/600x400/1E3A5F/white?text=Repair+Modul+AC'">
+                </div>
+                <div class="service-body">
+                    <i class="fas fa-microchip service-icon"></i>
+                    <h3>Repair Modul AC</h3>
+                    <div class="service-benefits">
+                        <div class="benefit-item"><i class="fas fa-microchip"></i><span>Perbaikan PCB & komponen elektronik</span></div>
+                        <div class="benefit-item"><i class="fas fa-exchange-alt"></i><span>Ganti komponen dengan original</span></div>
+                        <div class="benefit-item"><i class="fas fa-charging-station"></i><span>AC non-inverter & inverter</span></div>
+                        <div class="benefit-item"><i class="fas fa-certificate"></i><span>Garansi 30 hari</span></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 6: Service Rutin & Pengecekan -->
+            <div class="service-card">
+                <div class="service-img-wrapper">
+                    <img src="assets/Service ac bogor 6.jpg" alt="Service Rutin" class="service-img" onerror="this.src='https://placehold.co/600x400/1E3A5F/white?text=Service+Rutin'">
+                </div>
+                <div class="service-body">
+                    <i class="fas fa-calendar-check service-icon"></i>
+                    <h3>Service Rutin & Cek Kondisi</h3>
+                    <div class="service-benefits">
+                        <div class="benefit-item"><i class="fas fa-stethoscope"></i><span>Diagnostik menyeluruh komponen AC</span></div>
+                        <div class="benefit-item"><i class="fas fa-chart-line"></i><span>Optimalkan performa pendinginan</span></div>
+                        <div class="benefit-item"><i class="fas fa-hourglass-half"></i><span>Perpanjang umur pakai AC</span></div>
+                        <div class="benefit-item"><i class="fas fa-file-invoice-dollar"></i><span>Laporan hasil pengecekan</span></div>
+                    </div>
+                </div>
             </div>
         </div>
+        
         <div class="text-center mt-20">
             <a href="layanan.html" class="btn btn-secondary">Lihat Semua Layanan →</a>
         </div>
     </div>
 </section>
 
-<!-- POIN PENTING LAYANAN -->
-<section class="section bg-light">
+<!-- POIN KEUNGGULAN / FITUR UTAMA -->
+<section class="section">
     <div class="container">
-        <div class="poin-penting">
-            <h3><i class="fas fa-star-of-life"></i> Kenapa Harus PW TEHNIK?</h3>
-            <div class="poin-grid">
-                <div class="poin-item"><i class="fas fa-bolt"></i> <span>Respon Cepat < 15 menit</span></div>
-                <div class="poin-item"><i class="fas fa-certificate"></i> <span>Teknisi Bersertifikat</span></div>
-                <div class="poin-item"><i class="fas fa-shield-alt"></i> <span>Garansi 7 Hari</span></div>
-                <div class="poin-item"><i class="fas fa-hand-holding-usd"></i> <span>Harga Transparan</span></div>
-                <div class="poin-item"><i class="fas fa-clock"></i> <span>Service Tepat Waktu</span></div>
-                <div class="poin-item"><i class="fas fa-tools"></i> <span>Peralatan Modern</span></div>
+        <div class="feature-showcase">
+            <h2 class="section-title">✨ Kenapa Pilih PW TEHNIK?</h2>
+            <div class="features-grid">
+                <div class="feature-box">
+                    <div class="feature-icon"><i class="fas fa-bolt"></i></div>
+                    <h4>Respon Super Cepat</h4>
+                    <p>Konfirmasi booking dalam 15 menit & teknisi segera dijadwalkan</p>
+                </div>
+                <div class="feature-box">
+                    <div class="feature-icon"><i class="fas fa-certificate"></i></div>
+                    <h4>Teknisi Bersertifikat</h4>
+                    <p>Berpengalaman 5+ tahun & lulus uji kompetensi AC</p>
+                </div>
+                <div class="feature-box">
+                    <div class="feature-icon"><i class="fas fa-shield-alt"></i></div>
+                    <h4>Garansi 30 hari</h4>
+                    <p>Jaminan kualitas kerja, jika ada masalah kami kembali</p>
+                </div>
+                <div class="feature-box">
+                    <div class="feature-icon"><i class="fas fa-hand-holding-usd"></i></div>
+                    <h4>Harga Transparan</h4>
+                    <p>No hidden fee, biaya jelas di awal tanpa embel-embel</p>
+                </div>
+                <div class="feature-box">
+                    <div class="feature-icon"><i class="fas fa-microchip"></i></div>
+                    <h4>Alat Modern</h4>
+                    <p>Menggunakan peralatan diagnostic & vacuum pump terbaru</p>
+                </div>
+                <div class="feature-box">
+                    <div class="feature-icon"><i class="fas fa-map-marked-alt"></i></div>
+                    <h4>Jangkauan Luas</h4>
+                    <p>Melayani seluruh Kota Bogor & Kabupaten Bogor</p>
+                </div>
             </div>
         </div>
     </div>
 </section>
 
-<!-- KEUNGGULAN KAMI -->
-<section class="section">
+<!-- MANFAAT SERVICE AC (POIN EDUKASI) -->
+<section class="section bg-light">
     <div class="container">
-        <h2 class="section-title">⭐ Yang Kami Tawarkan</h2>
-        <div class="grid-3">
-            <div class="card text-center">
-                <i class="fas fa-clock" style="font-size: 2rem; color: var(--secondary);"></i>
-                <h3>Respon Cepat</h3>
-                <p>Konfirmasi dalam 15 menit</p>
+        <div class="info-card">
+            <div class="info-header">
+                <i class="fas fa-lightbulb"></i>
+                <h3>Tahukah Anda? Manfaat Rutin Service AC</h3>
             </div>
-            <div class="card text-center">
-                <i class="fas fa-certificate" style="font-size: 2rem; color: var(--secondary);"></i>
-                <h3>Teknisi Bersertifikat</h3>
-                <p>Berpengalaman dan profesional</p>
-            </div>
-            <div class="card text-center">
-                <i class="fas fa-shield-alt" style="font-size: 2rem; color: var(--secondary);"></i>
-                <h3>Garansi 7 Hari</h3>
-                <p>Jaminan kepuasan pelanggan</p>
+            <div class="info-grid">
+                <div class="info-item">
+                    <i class="fas fa-charging-station"></i>
+                    <span><strong>Hemat Listrik</strong> — AC yang bersih konsumsi listrik lebih rendah hingga 25%</span>
+                </div>
+                <div class="info-item">
+                    <i class="fas fa-lungs"></i>
+                    <span><strong>Udara Sehat</strong> — Bebas debu, jamur, dan bakteri penyebab ISPA</span>
+                </div>
+                <div class="info-item">
+                    <i class="fas fa-hourglass-half"></i>
+                    <span><strong>Awet & Tahan Lama</strong> — Komponen tidak cepat rusak karena perawatan rutin</span>
+                </div>
+                <div class="info-item">
+                    <i class="fas fa-volume-off"></i>
+                    <span><strong>Operasi Senyap</strong> — Mengurangi suara bising dari unit AC</span>
+                </div>
             </div>
         </div>
     </div>
 </section>
 
 <!-- AREA JANGKAUAN -->
-<section class="section bg-light">
+<section class="section">
     <div class="container">
         <div class="card">
             <h3 style="margin-bottom: 15px;">📍 Area Jangkauan Kami</h3>
             <p>Kami melayani seluruh wilayah Kota Bogor dan Kabupaten Bogor. Klik kecamatan di bawah untuk melihat kelurahan/desa:</p>
             
+            <!-- Tabs Kecamatan -->
             <div class="kecamatan-tabs" id="kecamatanTabs">
                 <button class="kecamatan-tab active" data-kecamatan="selatan">🌿 Bogor Selatan</button>
                 <button class="kecamatan-tab" data-kecamatan="utara">⬆️ Bogor Utara</button>
@@ -676,37 +294,139 @@
                 <button class="kecamatan-tab" data-kecamatan="kabupaten">🏞️ Kabupaten Bogor</button>
             </div>
             
+            <!-- Panel Kelurahan per Kecamatan -->
             <div id="kelurahanPanels">
+                
                 <div class="kelurahan-panel active-panel" data-panel="selatan">
-                    <div class="kecamatan-header"><i class="fas fa-tree"></i><h4>Kelurahan Bogor Selatan</h4></div>
-                    <div class="kelurahan-grid"><div class="kelurahan-item">Batutulis</div><div class="kelurahan-item">Bojongkerta</div><div class="kelurahan-item">Bondongan</div><div class="kelurahan-item">Cikaret</div><div class="kelurahan-item">Ciapus</div><div class="kelurahan-item">Cipaku</div><div class="kelurahan-item">Empang</div><div class="kelurahan-item">Harjasari</div><div class="kelurahan-item">Pakuan Hills</div><div class="kelurahan-item">Pamoyanan</div><div class="kelurahan-item">Rancamaya</div><div class="kelurahan-item">Ranggamekar</div></div>
+                    <div class="kecamatan-header">
+                        <i class="fas fa-tree"></i>
+                        <h4>Kelurahan Bogor Selatan</h4>
+                    </div>
+                    <div class="kelurahan-grid">
+                        <div class="kelurahan-item"><i class="fas fa-location-dot"></i> Batutulis</div>
+                        <div class="kelurahan-item"><i class="fas fa-location-dot"></i> Bojongkerta</div>
+                        <div class="kelurahan-item"><i class="fas fa-location-dot"></i> Bondongan</div>
+                        <div class="kelurahan-item"><i class="fas fa-location-dot"></i> Cikaret</div>
+                        <div class="kelurahan-item"><i class="fas fa-location-dot"></i> Ciapus</div>
+                        <div class="kelurahan-item"><i class="fas fa-location-dot"></i> Cipaku</div>
+                        <div class="kelurahan-item"><i class="fas fa-location-dot"></i> Empang</div>
+                        <div class="kelurahan-item"><i class="fas fa-location-dot"></i> Harjasari</div>
+                        <div class="kelurahan-item"><i class="fas fa-location-dot"></i> Pakuan Hills</div>
+                        <div class="kelurahan-item"><i class="fas fa-location-dot"></i> Pamoyanan</div>
+                        <div class="kelurahan-item"><i class="fas fa-location-dot"></i> Rancamaya</div>
+                        <div class="kelurahan-item"><i class="fas fa-location-dot"></i> Ranggamekar</div>
+                        <div class="kelurahan-item"><i class="fas fa-location-dot"></i> BNR</div>
+                    </div>
                 </div>
+                
                 <div class="kelurahan-panel" data-panel="utara">
-                    <div class="kecamatan-header"><i class="fas fa-mountain"></i><h4>Kelurahan Bogor Utara</h4></div>
-                    <div class="kelurahan-grid"><div class="kelurahan-item">Bantarjati</div><div class="kelurahan-item">Cibuluh</div><div class="kelurahan-item">Ciluar</div><div class="kelurahan-item">Tanah Baru</div><div class="kelurahan-item">Bangbarung</div><div class="kelurahan-item">Baranangsiang</div><div class="kelurahan-item">Katulampa</div><div class="kelurahan-item">Sindangrasa</div><div class="kelurahan-item">Sindangsari</div><div class="kelurahan-item">Sukasari</div><div class="kelurahan-item">Tajur</div></div>
+                    <div class="kecamatan-header">
+                        <i class="fas fa-mountain"></i>
+                        <h4>Kelurahan Bogor Utara</h4>
+                    </div>
+                    <div class="kelurahan-grid">
+                        <div class="kelurahan-item"><i class="fas fa-location-dot"></i> Bantarjati</div>
+                        <div class="kelurahan-item"><i class="fas fa-location-dot"></i> Cibuluh</div>
+                        <div class="kelurahan-item"><i class="fas fa-location-dot"></i> Ciluar</div>
+                        <div class="kelurahan-item"><i class="fas fa-location-dot"></i> Tanah Baru</div>
+                        <div class="kelurahan-item"><i class="fas fa-location-dot"></i> Bangbarung</div>
+                        <div class="kelurahan-item"><i class="fas fa-location-dot"></i> Baranangsiang</div>
+                        <div class="kelurahan-item"><i class="fas fa-location-dot"></i> Katulampa</div>
+                        <div class="kelurahan-item"><i class="fas fa-location-dot"></i> Sindangrasa</div>
+                        <div class="kelurahan-item"><i class="fas fa-location-dot"></i> Sindangsari</div>
+                        <div class="kelurahan-item"><i class="fas fa-location-dot"></i> Sukasari</div>
+                        <div class="kelurahan-item"><i class="fas fa-location-dot"></i> Tajur</div>
+                    </div>
                 </div>
+                
                 <div class="kelurahan-panel" data-panel="barat">
-                    <div class="kecamatan-header"><i class="fas fa-water"></i><h4>Kelurahan Bogor Barat</h4></div>
-                    <div class="kelurahan-grid"><div class="kelurahan-item">Loji</div><div class="kelurahan-item">Gunung Batu</div><div class="kelurahan-item">Pasir Jaya</div><div class="kelurahan-item">Pasir Mulya</div><div class="kelurahan-item">Sindang Barang</div><div class="kelurahan-item">Bubulak</div><div class="kelurahan-item">Cilendek</div><div class="kelurahan-item">Curug</div><div class="kelurahan-item">Margajaya</div><div class="kelurahan-item">Pasir Kuda</div><div class="kelurahan-item">Semplak</div><div class="kelurahan-item">Situ Gede</div></div>
+                    <div class="kecamatan-header">
+                        <i class="fas fa-water"></i>
+                        <h4>Kelurahan Bogor Barat</h4>
+                    </div>
+                    <div class="kelurahan-grid">
+                        <div class="kelurahan-item"><i class="fas fa-location-dot"></i> Loji</div>
+                        <div class="kelurahan-item"><i class="fas fa-location-dot"></i> Gunung Batu</div>
+                        <div class="kelurahan-item"><i class="fas fa-location-dot"></i> Pasir Jaya</div>
+                        <div class="kelurahan-item"><i class="fas fa-location-dot"></i> Pasir Mulya</div>
+                        <div class="kelurahan-item"><i class="fas fa-location-dot"></i> Sindang Barang</div>
+                        <div class="kelurahan-item"><i class="fas fa-location-dot"></i> Bubulak</div>
+                        <div class="kelurahan-item"><i class="fas fa-location-dot"></i> Cilendek</div>
+                        <div class="kelurahan-item"><i class="fas fa-location-dot"></i> Curug</div>
+                        <div class="kelurahan-item"><i class="fas fa-location-dot"></i> Margajaya</div>
+                        <div class="kelurahan-item"><i class="fas fa-location-dot"></i> Pasir Kuda</div>
+                        <div class="kelurahan-item"><i class="fas fa-location-dot"></i> Semplak</div>
+                        <div class="kelurahan-item"><i class="fas fa-location-dot"></i> Situ Gede</div>
+                    </div>
                 </div>
+                
                 <div class="kelurahan-panel" data-panel="tengah">
-                    <div class="kecamatan-header"><i class="fas fa-city"></i><h4>Kelurahan Bogor Tengah</h4></div>
-                    <div class="kelurahan-grid"><div class="kelurahan-item">Sempur</div><div class="kelurahan-item">Paledang</div><div class="kelurahan-item">Ciwaringin</div><div class="kelurahan-item">Pabaton</div><div class="kelurahan-item">Babakan</div><div class="kelurahan-item">Cibogor</div></div>
+                    <div class="kecamatan-header">
+                        <i class="fas fa-city"></i>
+                        <h4>Kelurahan Bogor Tengah</h4>
+                    </div>
+                    <div class="kelurahan-grid">
+                        <div class="kelurahan-item"><i class="fas fa-location-dot"></i> Sempur</div>
+                        <div class="kelurahan-item"><i class="fas fa-location-dot"></i> Paledang</div>
+                        <div class="kelurahan-item"><i class="fas fa-location-dot"></i> Ciwaringin</div>
+                        <div class="kelurahan-item"><i class="fas fa-location-dot"></i> Pabaton</div>
+                        <div class="kelurahan-item"><i class="fas fa-location-dot"></i> Babakan</div>
+                        <div class="kelurahan-item"><i class="fas fa-location-dot"></i> Cibogor</div>
+                    </div>
                 </div>
+                
                 <div class="kelurahan-panel" data-panel="timur">
-                    <div class="kecamatan-header"><i class="fas fa-church"></i><h4>Kelurahan Bogor Timur</h4></div>
-                    <div class="kelurahan-grid"><div class="kelurahan-item">Baranangsiang</div><div class="kelurahan-item">Katulampa</div><div class="kelurahan-item">Sindangrasa</div><div class="kelurahan-item">Sindangsari</div><div class="kelurahan-item">Sukasari</div><div class="kelurahan-item">Tajur</div><div class="kelurahan-item">Tanah Sareal</div></div>
+                    <div class="kecamatan-header">
+                        <i class="fas fa-church"></i>
+                        <h4>Kelurahan Bogor Timur</h4>
+                    </div>
+                    <div class="kelurahan-grid">
+                        <div class="kelurahan-item"><i class="fas fa-location-dot"></i> Baranangsiang</div>
+                        <div class="kelurahan-item"><i class="fas fa-location-dot"></i> Katulampa</div>
+                        <div class="kelurahan-item"><i class="fas fa-location-dot"></i> Sindangrasa</div>
+                        <div class="kelurahan-item"><i class="fas fa-location-dot"></i> Sindangsari</div>
+                        <div class="kelurahan-item"><i class="fas fa-location-dot"></i> Sukasari</div>
+                        <div class="kelurahan-item"><i class="fas fa-location-dot"></i> Tajur</div>
+                        <div class="kelurahan-item"><i class="fas fa-location-dot"></i> Tanah Sareal</div>
+                    </div>
                 </div>
+                
                 <div class="kelurahan-panel" data-panel="kabupaten">
-                    <div class="kecamatan-header"><i class="fas fa-mountain-sun"></i><h4>Wilayah Kabupaten Bogor</h4></div>
-                    <div class="kelurahan-grid"><div class="kelurahan-item">Bojong Koneng</div><div class="kelurahan-item">Bukit Cimanggu</div><div class="kelurahan-item">Cibinong</div><div class="kelurahan-item">Ciheleut</div><div class="kelurahan-item">Cilebut</div><div class="kelurahan-item">Cimanggu City</div><div class="kelurahan-item">Citereup</div><div class="kelurahan-item">Jambu Dua</div><div class="kelurahan-item">Kebon Pedes</div><div class="kelurahan-item">Laladon</div><div class="kelurahan-item">Gadog</div><div class="kelurahan-item">Cifor</div><div class="kelurahan-item">Dramaga</div><div class="kelurahan-item">Kemang</div></div>
+                    <div class="kecamatan-header">
+                        <i class="fas fa-mountain-sun"></i>
+                        <h4>Wilayah Kabupaten Bogor</h4>
+                    </div>
+                    <div class="kelurahan-grid">
+                        <div class="kelurahan-item"><i class="fas fa-location-dot"></i> Bojong Koneng</div>
+                        <div class="kelurahan-item"><i class="fas fa-location-dot"></i> Bukit Cimanggu</div>
+                        <div class="kelurahan-item"><i class="fas fa-location-dot"></i> Cibinong</div>
+                        <div class="kelurahan-item"><i class="fas fa-location-dot"></i> Ciheleut</div>
+                        <div class="kelurahan-item"><i class="fas fa-location-dot"></i> Cilebut</div>
+                        <div class="kelurahan-item"><i class="fas fa-location-dot"></i> Cimanggu City</div>
+                        <div class="kelurahan-item"><i class="fas fa-location-dot"></i> Citereup</div>
+                        <div class="kelurahan-item"><i class="fas fa-location-dot"></i> Jambu Dua Bogor</div>
+                        <div class="kelurahan-item"><i class="fas fa-location-dot"></i> Kebon Pedes</div>
+                        <div class="kelurahan-item"><i class="fas fa-location-dot"></i> Laladon</div>
+                        <div class="kelurahan-item"><i class="fas fa-location-dot"></i> Bubulak</div>
+                        <div class="kelurahan-item"><i class="fas fa-location-dot"></i> Gadog</div>
+                        <div class="kelurahan-item"><i class="fas fa-location-dot"></i> Cifor</div>
+                        <div class="kelurahan-item"><i class="fas fa-location-dot"></i> Cijunjung</div>
+                        <div class="kelurahan-item"><i class="fas fa-location-dot"></i> Cinangneng</div>
+                        <div class="kelurahan-item"><i class="fas fa-location-dot"></i> Danau Bogor Raya</div>
+                        <div class="kelurahan-item"><i class="fas fa-location-dot"></i> Dramaga</div>
+                        <div class="kelurahan-item"><i class="fas fa-location-dot"></i> Kemang</div>
+                        <div class="kelurahan-item"><i class="fas fa-location-dot"></i> Mancur</div>
+                    </div>
                 </div>
+                
             </div>
+            
             <p class="mt-20"><i class="fas fa-map-marker-alt" style="color: var(--accent);"></i> <strong>Di luar area? Hubungi kami untuk info ketersediaan!</strong></p>
         </div>
+        
         <div class="text-center mt-20">
             <a href="kontak.html" class="btn btn-primary">📅 Booking Sekarang</a>
-            <a href="https://wa.me/6281234567890" class="btn btn-wa" style="margin-left: 10px;"><i class="fab fa-whatsapp"></i> Chat WhatsApp</a>
+            <a href="https://wa.me/6281234567890" class="btn btn-wa"><i class="fab fa-whatsapp"></i> Chat WhatsApp</a>
         </div>
     </div>
 </section>
@@ -723,7 +443,60 @@
     </div>
 </footer>
 
+<script src="js/main.js"></script>
 <script>
+    // Slider functionality
+    const slidesFull = document.getElementById('slidesFull');
+    const prevBtn = document.getElementById('prevBtnFull');
+    const nextBtn = document.getElementById('nextBtnFull');
+    const dotsContainer = document.getElementById('dotsFull');
+    if(slidesFull && slidesFull.children.length > 0) {
+        let currentIndex = 0;
+        const slides = document.querySelectorAll('.slide-full');
+        function updateSlider() {
+            slidesFull.style.transform = `translateX(-${currentIndex * 100}%)`;
+            document.querySelectorAll('.dot-full').forEach((dot, i) => {
+                dot.classList.toggle('active', i === currentIndex);
+            });
+        }
+        function createDots() {
+            dotsContainer.innerHTML = '';
+            slides.forEach((_, i) => {
+                const dot = document.createElement('div');
+                dot.classList.add('dot-full');
+                if(i === currentIndex) dot.classList.add('active');
+                dot.addEventListener('click', () => {
+                    currentIndex = i;
+                    updateSlider();
+                });
+                dotsContainer.appendChild(dot);
+            });
+        }
+        function nextSlide() { currentIndex = (currentIndex + 1) % slides.length; updateSlider(); }
+        function prevSlide() { currentIndex = (currentIndex - 1 + slides.length) % slides.length; updateSlider(); }
+        createDots();
+        if(prevBtn) prevBtn.addEventListener('click', prevSlide);
+        if(nextBtn) nextBtn.addEventListener('click', nextSlide);
+        setInterval(nextSlide, 4000);
+    }
+    
+    // Kecamatan Tabs
+    const tabs = document.querySelectorAll('.kecamatan-tab');
+    const panels = document.querySelectorAll('.kelurahan-panel');
+    if(tabs.length) {
+        tabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                const kec = tab.dataset.kecamatan;
+                tabs.forEach(t => t.classList.remove('active'));
+                tab.classList.add('active');
+                panels.forEach(panel => {
+                    panel.classList.remove('active-panel');
+                    if(panel.dataset.panel === kec) panel.classList.add('active-panel');
+                });
+            });
+        });
+    }
+    
     // Mobile menu toggle
     const menuToggle = document.getElementById('menuToggle');
     const navMenu = document.getElementById('navMenu');
@@ -732,80 +505,6 @@
             navMenu.classList.toggle('active');
         });
     }
-
-    // Slider
-    const slidesFull = document.getElementById('slidesFull');
-    const prevBtn = document.getElementById('prevBtnFull');
-    const nextBtn = document.getElementById('nextBtnFull');
-    const dotsContainer = document.getElementById('dotsFull');
-    const slides = document.querySelectorAll('.slide-full');
-    let currentIndex = 0;
-    let autoSlideInterval;
-
-    function updateSlider() {
-        slidesFull.style.transform = `translateX(-${currentIndex * 100}%)`;
-        document.querySelectorAll('.dot').forEach((dot, i) => {
-            dot.classList.toggle('active', i === currentIndex);
-        });
-    }
-
-    function createDots() {
-        dotsContainer.innerHTML = '';
-        slides.forEach((_, i) => {
-            const dot = document.createElement('div');
-            dot.classList.add('dot');
-            if (i === currentIndex) dot.classList.add('active');
-            dot.addEventListener('click', () => {
-                currentIndex = i;
-                updateSlider();
-                resetAutoSlide();
-            });
-            dotsContainer.appendChild(dot);
-        });
-    }
-
-    function nextSlide() {
-        currentIndex = (currentIndex + 1) % slides.length;
-        updateSlider();
-    }
-
-    function prevSlide() {
-        currentIndex = (currentIndex - 1 + slides.length) % slides.length;
-        updateSlider();
-    }
-
-    function startAutoSlide() {
-        autoSlideInterval = setInterval(nextSlide, 4000);
-    }
-
-    function resetAutoSlide() {
-        clearInterval(autoSlideInterval);
-        startAutoSlide();
-    }
-
-    if (slides.length > 0) {
-        createDots();
-        startAutoSlide();
-        prevBtn.addEventListener('click', () => { prevSlide(); resetAutoSlide(); });
-        nextBtn.addEventListener('click', () => { nextSlide(); resetAutoSlide(); });
-    }
-
-    // Kecamatan Tabs
-    const tabs = document.querySelectorAll('.kecamatan-tab');
-    const panels = document.querySelectorAll('.kelurahan-panel');
-    tabs.forEach(tab => {
-        tab.addEventListener('click', () => {
-            const kec = tab.dataset.kecamatan;
-            tabs.forEach(t => t.classList.remove('active'));
-            tab.classList.add('active');
-            panels.forEach(panel => {
-                panel.classList.remove('active-panel');
-                if (panel.dataset.panel === kec) {
-                    panel.classList.add('active-panel');
-                }
-            });
-        });
-    });
 </script>
 </body>
 </html>
