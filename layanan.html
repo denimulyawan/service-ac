@@ -2,7 +2,7 @@
 <html lang="id">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
     <title>Layanan Service AC - PW TEHNIK</title>
     <meta name="description" content="Daftar lengkap layanan service AC: cuci AC, isi freon, bongkar pasang, perbaikan bocor. Harga terjangkau di Kota Bogor.">
     <meta name="keywords" content="layanan AC Bogor, cuci AC, isi freon, bongkar pasang AC, service AC Bogor">
@@ -43,7 +43,7 @@
         <h2 class="section-title">🔧 Daftar Layanan & Harga</h2>
         <p style="text-align: center; margin-bottom: 20px;">✨ Klik card layanan untuk melihat detail harga ✨</p>
         
-        <!-- Filter Kategori dengan GAMBAR (tombol lebih besar) -->
+        <!-- Filter Kategori dengan GAMBAR -->
         <div class="filter-buttons">
             <button class="filter-btn active" data-filter="all">
                 <img src="assets/Service ac bogor 1.jpg" alt="Semua" onerror="this.src='https://placehold.co/80x80?text=📋'">
@@ -102,9 +102,9 @@
 </footer>
 
 <script>
-    // Data layanan lengkap (26 Layanan) - TIDAK DIUBAH
+    // ========== DATA LAYANAN (26 Layanan) ==========
     const services = [
-        // ========== CUCI AC (6 Layanan) ==========
+        // CUCI AC (6 Layanan)
         { name: "Cuci AC Split 0.5 - 1 PK", price: "Rp 85.000", priceNumber: 85000, category: "cuci", icon: "fa-snowplow", emoji: "🧼", description: "Layanan cuci AC untuk AC Split ukuran 0.5 PK hingga 1 PK. Meliputi pembongkaran, pencucian indoor & outdoor, hingga pemasangan kembali. Termasuk pengecekan kelistrikan." },
         { name: "Cuci AC Split Inverter 0.5 - 1 PK", price: "Rp 100.000", priceNumber: 100000, category: "cuci", icon: "fa-snowplow", emoji: "🧼", description: "Layanan cuci AC khusus untuk AC Split Inverter ukuran 0.5 PK hingga 1 PK. Penanganan khusus untuk teknologi inverter dengan prosedur yang tepat." },
         { name: "Cuci AC Split 1.5 - 2 PK", price: "Rp 125.000", priceNumber: 125000, category: "cuci", icon: "fa-snowplow", emoji: "🧼", description: "Layanan cuci AC untuk AC Split ukuran 1.5 PK hingga 2 PK. Meliputi pembongkaran, pencucian indoor & outdoor, hingga pemasangan kembali." },
@@ -112,13 +112,13 @@
         { name: "Cuci AC Standing Floor", price: "Rp 750.000", priceNumber: 750000, category: "cuci", icon: "fa-building", emoji: "🏢", description: "Layanan cuci untuk AC Standing Floor (AC lantai). Pembersihan menyeluruh pada unit indoor dan outdoor. Cocok untuk ruangan besar." },
         { name: "Cuci AC Cassette", price: "Rp 850.000", priceNumber: 850000, category: "cuci", icon: "fa-border-all", emoji: "📦", description: "Layanan cuci untuk AC Cassette (AC plafon). Pembersihan menyeluruh pada 4 sisi unit. Cocok untuk ruangan besar seperti kantor atau toko." },
         
-        // ========== FREON (4 Layanan) ==========
+        // FREON (4 Layanan)
         { name: "Tambah Freon AC Split 0.5 - 1 PK", price: "Rp 250.000", priceNumber: 250000, category: "freon", icon: "fa-wind", emoji: "❄️", description: "Penambahan freon untuk AC Split ukuran 0.5-1 PK yang freon-nya berkurang. Dilakukan pengecekan tekanan terlebih dahulu." },
         { name: "Tambah Freon AC Split 1.5 - 2 PK", price: "Rp 350.000", priceNumber: 350000, category: "freon", icon: "fa-wind", emoji: "❄️", description: "Penambahan freon untuk AC Split ukuran 1.5-2 PK yang freon-nya berkurang. Dilakukan pengecekan tekanan terlebih dahulu." },
         { name: "Isi Freon AC 0.5 - 1 PK", price: "Rp 300.000", priceNumber: 300000, category: "freon", icon: "fa-wind", emoji: "❄️", description: "Pengisian freon dari kosong untuk AC ukuran 0.5-1 PK. Termasuk pengecekan kebocoran sistem." },
         { name: "Isi Freon AC 1.5 - 2 PK", price: "Rp 450.000", priceNumber: 450000, category: "freon", icon: "fa-wind", emoji: "❄️", description: "Pengisian freon dari kosong untuk AC ukuran 1.5-2 PK. Termasuk pengecekan kebocoran sistem." },
         
-        // ========== BONGKAR PASANG (6 Layanan) ==========
+        // BONGKAR PASANG (6 Layanan)
         { name: "Bongkar AC Split 0.5 - 1 PK", price: "Rp 150.000", priceNumber: 150000, category: "bongkar", icon: "fa-tools", emoji: "🔧", description: "Jasa bongkar AC Split ukuran 0.5-1 PK dari lokasi lama. Tidak termasuk pemasangan. Freon akan ditampung sementara." },
         { name: "Bongkar AC Split 1.5 - 2 PK", price: "Rp 200.000", priceNumber: 200000, category: "bongkar", icon: "fa-tools", emoji: "🔧", description: "Jasa bongkar AC Split ukuran 1.5-2 PK dari lokasi lama. Tidak termasuk pemasangan." },
         { name: "Jasa Pasang AC Split 0.5 - 1 PK", price: "Rp 300.000", priceNumber: 300000, category: "bongkar", icon: "fa-plug", emoji: "🔌", description: "Jasa pemasangan AC Split baru ukuran 0.5-1 PK. Termasuk bracket standar, pengecekan, dan vacuum." },
@@ -126,7 +126,7 @@
         { name: "Bongkar Pasang AC Split 0.5 - 1 PK", price: "Rp 450.000", priceNumber: 450000, category: "bongkar", icon: "fa-exchange-alt", emoji: "🔄", description: "Jasa bongkar dari lokasi lama dan pasang kembali di lokasi baru untuk AC 0.5-1 PK. Termasuk pengecekan freon." },
         { name: "Bongkar Pasang AC Split 1.5 - 2 PK", price: "Rp 625.000", priceNumber: 625000, category: "bongkar", icon: "fa-exchange-alt", emoji: "🔄", description: "Jasa bongkar dari lokasi lama dan pasang kembali di lokasi baru untuk AC 1.5-2 PK. Termasuk pengecekan freon." },
         
-        // ========== PERBAIKAN & LAINNYA (10 Layanan) ==========
+        // PERBAIKAN & LAINNYA (10 Layanan)
         { name: "Bobok Tembok (per titik)", price: "Rp 50.000", priceNumber: 50000, category: "perbaikan", icon: "fa-hammer", emoji: "🔨", description: "Jasa bobok tembok untuk jalur pipa AC per titik. Sudah termasuk pengecoran kembali." },
         { name: "Ganti Kapasitor 0.5 - 2 PK", price: "Rp 350.000 - 475.000", priceNumber: null, category: "perbaikan", icon: "fa-microchip", emoji: "⚡", description: "Penggantian kapasitor AC. Harga tergantung jenis dan ukuran kapasitor. Konsultasikan dengan teknisi." },
         { name: "Pengelasan (per titik)", price: "Rp 60.000", priceNumber: 60000, category: "perbaikan", icon: "fa-fire", emoji: "🔥", description: "Jasa pengelasan pada pipa AC atau komponen lain per titik kebocoran. Hasil rapi dan anti bocor." },
@@ -141,11 +141,65 @@
         { name: "Repair Modul AC Split 1.5 - 2 PK", price: "Rp 650.000", priceNumber: 650000, category: "perbaikan", icon: "fa-microchip", emoji: "📟", description: "Perbaikan modul/pcb AC Split ukuran 1.5-2 PK yang bermasalah. Garansi 30 hari." }
     ];
     
-    // Tampilkan grid layanan
+    // ========== MOBILE MENU TOGGLE (LENGKAP - TUTUP OTOMATIS) ==========
+    const menuToggle = document.getElementById('menuToggle');
+    const navMenu = document.getElementById('navMenu');
+    
+    if (menuToggle && navMenu) {
+        // Buka/tutup saat tombol diklik
+        menuToggle.addEventListener('click', function(e) {
+            e.stopPropagation();
+            navMenu.classList.toggle('active');
+        });
+        
+        // Tutup saat klik link di dalam menu
+        const navLinks = document.querySelectorAll('.nav-menu a');
+        navLinks.forEach(function(link) {
+            link.addEventListener('click', function() {
+                navMenu.classList.remove('active');
+            });
+        });
+        
+        // Tutup saat klik di luar menu
+        document.addEventListener('click', function(event) {
+            const isClickInsideMenu = navMenu.contains(event.target);
+            const isClickOnToggle = menuToggle.contains(event.target);
+            if (!isClickInsideMenu && !isClickOnToggle && navMenu.classList.contains('active')) {
+                navMenu.classList.remove('active');
+            }
+        });
+        
+        // Tutup saat scroll
+        window.addEventListener('scroll', function() {
+            if (navMenu.classList.contains('active')) {
+                navMenu.classList.remove('active');
+            }
+        });
+        
+        // Tutup saat resize (dari mobile ke desktop)
+        window.addEventListener('resize', function() {
+            if (window.innerWidth > 768 && navMenu.classList.contains('active')) {
+                navMenu.classList.remove('active');
+            }
+        });
+    }
+    
+    // ========== TAMPILKAN LAYANAN ==========
     const servicesList = document.getElementById('servicesList');
     let currentFilter = 'all';
     
+    function getCategoryName(cat) {
+        const names = {
+            cuci: '🧼 Cuci AC',
+            freon: '❄️ Freon',
+            bongkar: '🔧 Bongkar/Pasang',
+            perbaikan: '⚙️ Perbaikan'
+        };
+        return names[cat] || '📋 Layanan';
+    }
+    
     function displayServices(filter) {
+        if (!servicesList) return;
         servicesList.innerHTML = '';
         const filteredServices = filter === 'all' ? services : services.filter(s => s.category === filter);
         
@@ -170,16 +224,6 @@
         });
     }
     
-    function getCategoryName(cat) {
-        const names = {
-            cuci: '🧼 Cuci AC',
-            freon: '❄️ Freon',
-            bongkar: '🔧 Bongkar/Pasang',
-            perbaikan: '⚙️ Perbaikan'
-        };
-        return names[cat] || '📋 Layanan';
-    }
-    
     // Filter buttons
     const filterBtns = document.querySelectorAll('.filter-btn');
     filterBtns.forEach(btn => {
@@ -193,7 +237,7 @@
     
     displayServices('all');
     
-    // Modal Popup
+    // ========== MODAL POPUP ==========
     const modal = document.getElementById('priceModal');
     const modalClose = document.querySelector('.price-modal-close');
     const modalIcon = document.getElementById('modalIcon');
@@ -202,6 +246,7 @@
     const modalDescription = document.getElementById('modalDescription');
     
     function openModal(service) {
+        if (!modal) return;
         modalIcon.textContent = service.emoji;
         modalTitle.textContent = service.name;
         modalPrice.textContent = service.price;
@@ -211,29 +256,23 @@
     }
     
     function closeModal() {
+        if (!modal) return;
         modal.style.display = 'none';
         document.body.style.overflow = 'auto';
     }
     
-    modalClose.addEventListener('click', closeModal);
-    modal.addEventListener('click', (e) => {
-        if (e.target === modal) closeModal();
-    });
+    if (modalClose) modalClose.addEventListener('click', closeModal);
+    if (modal) {
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) closeModal();
+        });
+    }
     
     document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape' && modal.style.display === 'flex') {
+        if (e.key === 'Escape' && modal && modal.style.display === 'flex') {
             closeModal();
         }
     });
-    
-    // Mobile menu toggle
-    const menuToggle = document.getElementById('menuToggle');
-    const navMenu = document.getElementById('navMenu');
-    if (menuToggle) {
-        menuToggle.addEventListener('click', () => {
-            navMenu.classList.toggle('active');
-        });
-    }
 </script>
 </body>
 </html>
