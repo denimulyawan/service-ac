@@ -5,7 +5,7 @@ export default async function handler(req, res) {
     const BOT_TOKEN = '8433623197:AAF2O_CsRlR418Psq6ys2INYcgNgeHMwPOU';
     
     // GANTI DENGAN CHAT ID DARI getUpdates!!!
-    const CHAT_ID = '5594007525';
+    const CHAT_ID = '-1003858096411';
     
     // CORS biar aman
     res.setHeader('Access-Control-Allow-Origin', '*');
