@@ -167,24 +167,24 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     
     // ========== PORTFOLIO LIGHTBOX ==========
-    const modal = document.getElementById('lightboxModal');
-    const modalImg = document.getElementById('lightboxImg');
-    const closeModal = document.querySelector('.modal-close');
+    // const modal = document.getElementById('lightboxModal');
+    // const modalImg = document.getElementById('lightboxImg');
+    // const closeModal = document.querySelector('.modal-close');
     
-    if (modal && modalImg) {
-        window.openLightbox = function(imgSrc) {
-            modal.style.display = 'block';
-            modalImg.src = imgSrc;
-        };
-        if (closeModal) { 
-            closeModal.onclick = function() { 
-                modal.style.display = 'none'; 
-            }; 
-        }
-        modal.onclick = function() { 
-            modal.style.display = 'none'; 
-        };
-    }
+    // if (modal && modalImg) {
+    //     window.openLightbox = function(imgSrc) {
+    //         modal.style.display = 'block';
+    //         modalImg.src = imgSrc;
+    //     };
+    //     if (closeModal) { 
+    //         closeModal.onclick = function() { 
+    //             modal.style.display = 'none'; 
+    //         }; 
+    //     }
+    //     modal.onclick = function() { 
+    //         modal.style.display = 'none'; 
+    //     };
+    // }
     
     // ========== SERVICE CHIPS ==========
     const serviceChips = document.querySelectorAll('.service-chip');
