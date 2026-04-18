@@ -35,8 +35,8 @@
             transform: translateY(-1px);
         }
         .service-chip.active {
-            background: var(--secondary);
-            border-color: var(--secondary);
+            background: #3B82F6;
+            border-color: #3B82F6;
             color: white;
         }
         .service-chip.active .chip-icon {
@@ -85,12 +85,12 @@
                 <a href="https://wa.me/628212642926?text=Halo%20PW%20TEKNIK%2C%20saya%20mau%20booking%20service%20AC" class="btn btn-wa" style="margin-top: 10px;">Chat Sekarang</a>
             </div>
             <div class="card text-center">
-                <i class="fas fa-phone-alt" style="font-size: 2.5rem; color: var(--secondary);"></i>
+                <i class="fas fa-phone-alt" style="font-size: 2.5rem; color: #3B82F6;"></i>
                 <h3>Telepon</h3>
                 <p>+62 821-2642-926</p>
             </div>
             <div class="card text-center">
-                <i class="fas fa-envelope" style="font-size: 2.5rem; color: var(--secondary);"></i>
+                <i class="fas fa-envelope" style="font-size: 2.5rem; color: #3B82F6;"></i>
                 <h3>Email</h3>
                 <p>pwteknikbogor@gmail.com</p>
             </div>
@@ -105,7 +105,7 @@
                 </div>
                 <div class="form-group">
                     <label>No. WhatsApp *</label>
-                    <input type="tel" id="wa" placeholder="81234567890" required>
+                    <input type="tel" id="wa" placeholder="8212642926" required>
                     <small>Masukkan tanpa 0 atau +62, contoh: 8212642926</small>
                 </div>
                 <div class="form-group">
@@ -265,13 +265,9 @@
         });
     });
     
-    // ========== FORM HANDLER (TELEGRAM READY) ==========
+    // ========== FORM HANDLER UNTUK VERCEL ==========
     const form = document.getElementById('bookingForm');
     const formMessage = document.getElementById('formMessage');
-    
-    // 🔴 GANTI URL INI DENGAN API ENDPOINT VERCEL ANDA NANTI
-    const API_URL = '/api/send-to-telegram';  // Untuk Vercel
-    // const API_URL = 'https://script.google.com/macros/s/YOUR_ID/exec'; // Untuk Google Apps Script
     
     form.addEventListener('submit', async (e) => {
         e.preventDefault();
@@ -279,12 +275,12 @@
         const selectedChips = document.querySelectorAll('.service-chip.active');
         const selectedLayanan = Array.from(selectedChips).map(chip => chip.dataset.value);
         
-        // Format nomor WA (hapus non-digit, tambah 62)
+        // Format nomor WA (ubah jadi 62xxx)
         let waNumber = document.getElementById('wa').value.replace(/\D/g, '');
         if (waNumber.startsWith('0')) {
             waNumber = '62' + waNumber.substring(1);
         }
-        if (!waNumber.startsWith('62')) {
+        if (!waNumber.startsWith('62') && waNumber.length > 0) {
             waNumber = '62' + waNumber;
         }
         
@@ -316,7 +312,8 @@
         formMessage.style.color = 'blue';
         
         try {
-            const response = await fetch(API_URL, {
+            // Kirim ke API Vercel
+            const response = await fetch('/api/send-to-telegram', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -326,7 +323,9 @@
             
             const result = await response.json();
             
-            if (result.status === 'ok' || response.ok) {
+            console.log('Response dari API:', result);
+            
+            if (response.ok && result.status === 'ok') {
                 formMessage.innerHTML = '✅ Pesanan terkirim! Admin akan hubungi via WhatsApp dalam 15 menit.';
                 formMessage.style.color = 'green';
                 form.reset();
@@ -337,17 +336,15 @@
                 });
                 updateSelectedServices();
                 
-                // Reset tanggal ke minimal
+                // Reset tanggal ke minimal H+1
                 setMinDate();
                 
-                // Reset hidden input
-                if (selectedServicesInput) selectedServicesInput.value = '';
             } else {
                 throw new Error(result.message || 'Gagal mengirim');
             }
         } catch (error) {
-            console.error('Error:', error);
-            formMessage.innerHTML = '❌ Gagal mengirim. Silakan hubungi WhatsApp langsung: 0821-2642-926';
+            console.error('Error detail:', error);
+            formMessage.innerHTML = `❌ Gagal mengirim. Silakan hubungi WhatsApp: 0821-2642-926`;
             formMessage.style.color = 'red';
         }
     });
